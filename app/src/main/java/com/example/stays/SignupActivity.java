@@ -2,13 +2,26 @@ package com.example.stays;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SignupActivity extends AppCompatActivity {
+
+    private EditText firstNameEditText;
+    private EditText lastNameEditText;
+    private EditText emailEditText;
+    private EditText mobileNumberEditText;
+    private EditText passwordEditText;
+
+    private DatabaseHelper databaseHelper;
 
 //    Create an object variable for the text view
     TextView txtLogin;
@@ -21,15 +34,25 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-//        Bind to the view
-        txtLogin = (TextView) findViewById(R.id.tvLoginLink);
+        // Initialize DatabaseHelper
+        databaseHelper = new DatabaseHelper(this);
 
+        // Find views by their IDs
+        firstNameEditText = findViewById(R.id.etSignupFirstname);
+        lastNameEditText = findViewById(R.id.etSignupLastname);
+        emailEditText = findViewById(R.id.etSignupEmail);
+        mobileNumberEditText = findViewById(R.id.etSignupMobile);
+        passwordEditText = findViewById(R.id.etSignupPassword);
+        txtLogin = (TextView) findViewById(R.id.tvLoginLink);
         btnSignup = (Button)findViewById(R.id.btnSignupBTN);
+
+
 
 //        Create an onclick listener event on the textview link
         txtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
                 // Start the Login activity
                 Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
@@ -46,21 +69,81 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-//                Check for appropriate field entries
+                // Retrieve entered user details
+                String firstName = firstNameEditText.getText().toString().trim();
+                String lastName = lastNameEditText.getText().toString().trim();
+                String email = emailEditText.getText().toString().trim();
+                String mobileNumber = mobileNumberEditText.getText().toString().trim();
+                String password = passwordEditText.getText().toString().trim();
 
 
-//                Create the database connection to the SQLite database and insert the data
+                // Validate input fields
+                if (firstName.isEmpty()) {
+                    firstNameEditText.setError("Please enter your first name");
+                    firstNameEditText.requestFocus();
+                    return;
+                }
+
+                if (lastName.isEmpty()) {
+                    lastNameEditText.setError("Please enter your last name");
+                    lastNameEditText.requestFocus();
+                    return;
+                }
+
+                if (email.isEmpty()) {
+                    emailEditText.setError("Please enter your email address");
+                    emailEditText.requestFocus();
+                    return;
+                }
+
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    emailEditText.setError("Please enter a valid email address");
+                    emailEditText.requestFocus();
+                    return;
+                }
+
+                if (mobileNumber.isEmpty()) {
+                    mobileNumberEditText.setError("Please enter your mobile number");
+                    mobileNumberEditText.requestFocus();
+                    return;
+                }
+
+                if (password.isEmpty()) {
+                    passwordEditText.setError("Please enter a password");
+                    passwordEditText.requestFocus();
+                    return;
+                }
 
 
-
-                // Start the Login activity
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                startActivity(intent);
-
-                // Close the main activity
-                finish();
-
+                // Insert user details into SQLite database
+                if (insertUserDetails(firstName, lastName, email, mobileNumber, password)) {
+//                    Show a quick message
+                    Toast.makeText(SignupActivity.this, "Signup successful", Toast.LENGTH_SHORT).show();
+                    // Start the Login activity
+                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                    // Execute the activity
+                    startActivity(intent);
+                    // Close the signup activity
+                    finish();
+                } else {
+                    Toast.makeText(SignupActivity.this, "Signup failed", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+    }
+
+
+    private boolean insertUserDetails(String firstName, String lastName, String email, String mobileNumber, String password){
+
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DatabaseHelper.COLUMN_FIRSTNAME, firstName);
+        contentValues.put(DatabaseHelper.COLUMN_LASTNAME, lastName);
+        contentValues.put(DatabaseHelper.COLUMN_EMAIL, email);
+        contentValues.put(DatabaseHelper.COLUMN_MOBILE, mobileNumber);
+        contentValues.put(DatabaseHelper.COLUMN_PASSWORD, password);
+        long result = db.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
+        return result != -1;
+
     }
 }

@@ -6,9 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
+
+//    Create objects variables for the username/mobile and password
+    private EditText usernameEditText, passwordEditText;
+
+//    Create object variable to for the checkbox
+    private CheckBox rememberMeCheckBox;
+
 
 //    Create an object variable for the signup text view
     TextView txtSignup;
