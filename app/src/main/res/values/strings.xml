@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Stays</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_fragment">Search fragment</string>
+    <string name="notification_fragment">Notifications fragment</string>
+    <string name="bookmark_fragment">Bookmark fragment</string>
+    <string name="shopping_cart_fragment">Shopping Cart fragment</string>
+    <string name="account_fragment">User Account fragment</string>
+
+
+    <string name="tab_cabin">Cabin</string>
+    <string name="tab_beach">Beach</string>
+    <string name="tab_camping">Camping</string>
+    <string name="tab_hotel">Hotel</string>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    Menu Items     -->
+    <item
+        android:id="@+id/mnu_Item_Home"
+        android:title="Home"
+        android:icon="@drawable/baseline_home"/>
+
+<!--    <item-->
+<!--        android:id="@+id/mnu_Item_Search"-->
+<!--        android:title="Search"-->
+<!--        android:icon="@drawable/outline_search"/>-->
+
+    <item
+        android:id="@+id/mnu_Item_Notification"
+        android:title="Notifications"
+        android:icon="@drawable/outline_notifications"/>
+
+    <item
+        android:id="@+id/mnu_Item_Bookmark"
+        android:title="Bookmark"
+        android:icon="@drawable/outline_bookmark_border"/>
+
+    <item
+        android:id="@+id/mnu_Item_Cart"
+        android:title="Shopping Cart"
+        android:icon="@drawable/outline_shopping_cart"/>
+
+    <item
+        android:id="@+id/mnu_Item_UserAccount"
+        android:title="User Accounts"
+        android:icon="@drawable/outline_person"/>
+
+</menu>

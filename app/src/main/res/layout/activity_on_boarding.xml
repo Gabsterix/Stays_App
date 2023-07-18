@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OnBoardingActivity">
+
+    <ImageView
+        android:id="@+id/imageViewPlaceholder"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="110dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/onboarding"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:background="@drawable/rounded_primary_button"
+        android:layout_below="@+id/imageViewPlaceholder"
+        android:layout_marginTop="130dp"
+        android:paddingRight="125dp"
+        android:paddingLeft="125dp"
+        android:paddingTop="12dp"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        android:background="@drawable/rounded_secondary_button"
+        android:layout_below="@+id/btnLogin"
+        android:layout_marginTop="15dp"
+        android:paddingRight="125dp"
+        android:paddingLeft="125dp"
+        android:paddingTop="12dp"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="12dp"/>
+
+</RelativeLayout>

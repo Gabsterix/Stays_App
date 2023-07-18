@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    tools:context=".SignupActivity">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="30dp"
+        android:background="@drawable/logo"/>
+
+    <TextView
+        android:id="@+id/tvSignupPageNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_below="@id/ivLogo"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/tvSignupPageSubHeadingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register to continue"
+        android:textSize="18dp"
+        android:layout_below="@+id/tvSignupPageNameLabel"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/tvSignupPageLoginHeaderLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign-up"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvSignupPageSubHeadingLabel"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"/>
+
+    <EditText
+        android:id="@+id/etSignupFirstname"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="First name"
+        android:textSize="20dp"
+        android:layout_below="@+id/tvSignupPageLoginHeaderLabel"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/etSignupLastname"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Last name"
+        android:textSize="20dp"
+        android:layout_below="@+id/etSignupFirstname"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/etSignupEmail"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Email address"
+        android:textSize="20dp"
+        android:layout_below="@+id/etSignupLastname"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/etSignupMobile"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Mobile number"
+        android:textSize="20dp"
+        android:layout_below="@+id/etSignupEmail"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/etSignupPassword"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textSize="20dp"
+        android:inputType="textPassword"
+        android:layout_below="@+id/etSignupMobile"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/etSignupRePassword"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Re-type Password"
+        android:textSize="20dp"
+        android:inputType="textPassword"
+        android:layout_below="@+id/etSignupPassword"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnSignupBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_primary_button"
+        android:text="Sign-up"
+        android:layout_below="@+id/etSignupRePassword"
+        android:paddingLeft="125dp"
+        android:paddingRight="125dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tvLoginLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="18dp"
+        android:layout_below="@+id/btnSignupBTN"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"/>
+
+
+
+</RelativeLayout>
