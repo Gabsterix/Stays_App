@@ -5,7 +5,7 @@
     <string name="search_fragment">Search fragment</string>
     <string name="notification_fragment">Notifications fragment</string>
     <string name="bookmark_fragment">Bookmark fragment</string>
-    <string name="shopping_cart_fragment">Shopping Cart fragment</string>
+    <string name="booked_fragment">Booked fragment</string>
     <string name="account_fragment">User Account fragment</string>
 
 

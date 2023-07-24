@@ -45,7 +45,7 @@
         android:textSize="24dp"
         android:textStyle="bold"
         android:layout_below="@+id/tvLoginPageSubHeadingLabel"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="110dp"
         android:layout_marginStart="30dp"/>
 
     <EditText
@@ -53,7 +53,8 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:textSize="25dp"
-        android:hint="Mobile/Email"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
         android:layout_below="@+id/tvLoginPageLoginHeaderLabel"
         android:layout_marginTop="20dp"
         android:layout_marginStart="30dp"/>

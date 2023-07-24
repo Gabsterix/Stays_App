@@ -24,8 +24,8 @@
 
     <item
         android:id="@+id/mnu_Item_Cart"
-        android:title="Shopping Cart"
-        android:icon="@drawable/outline_shopping_cart"/>
+        android:title="Bookings"
+        android:icon="@drawable/outline_book"/>
 
     <item
         android:id="@+id/mnu_Item_UserAccount"

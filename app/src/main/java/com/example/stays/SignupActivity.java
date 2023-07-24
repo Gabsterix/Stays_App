@@ -37,6 +37,9 @@ public class SignupActivity extends AppCompatActivity {
         // Initialize DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
 
+//        Set the table name variable
+        databaseHelper.TABLE_NAME = "users";
+
         // Find views by their IDs
         firstNameEditText = findViewById(R.id.etSignupFirstname);
         lastNameEditText = findViewById(R.id.etSignupLastname);
@@ -119,6 +122,8 @@ public class SignupActivity extends AppCompatActivity {
                 if (insertUserDetails(firstName, lastName, email, mobileNumber, password)) {
 //                    Show a quick message
                     Toast.makeText(SignupActivity.this, "Signup successful", Toast.LENGTH_SHORT).show();
+//                    Clear the fields of their values
+                    clearEditTextFields();
                     // Start the Login activity
                     Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                     // Execute the activity
@@ -144,6 +149,16 @@ public class SignupActivity extends AppCompatActivity {
         contentValues.put(DatabaseHelper.COLUMN_PASSWORD, password);
         long result = db.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
         return result != -1;
+
+    }
+
+    public void clearEditTextFields(){
+
+        firstNameEditText.setText("");
+        lastNameEditText.setText("");
+        emailEditText.setText("");
+        mobileNumberEditText.setText("");
+        passwordEditText.setText("");
 
     }
 }
