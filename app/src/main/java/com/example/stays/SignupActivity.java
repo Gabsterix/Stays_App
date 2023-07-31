@@ -21,6 +21,8 @@ public class SignupActivity extends AppCompatActivity {
     private EditText mobileNumberEditText;
     private EditText passwordEditText;
 
+    private EditText imagePathEditText;
+
     private DatabaseHelper databaseHelper;
 
 //    Create an object variable for the text view
@@ -38,7 +40,7 @@ public class SignupActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
 
 //        Set the table name variable
-        databaseHelper.TABLE_NAME = "users";
+//        databaseHelper.TABLE_NAME = "user";
 
         // Find views by their IDs
         firstNameEditText = findViewById(R.id.etSignupFirstname);
@@ -46,21 +48,17 @@ public class SignupActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.etSignupEmail);
         mobileNumberEditText = findViewById(R.id.etSignupMobile);
         passwordEditText = findViewById(R.id.etSignupPassword);
+        imagePathEditText = findViewById(R.id.etImagePath);
         txtLogin = (TextView) findViewById(R.id.tvLoginLink);
         btnSignup = (Button)findViewById(R.id.btnSignupBTN);
-
-
 
 //        Create an onclick listener event on the textview link
         txtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 // Start the Login activity
                 Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
                 startActivity(intent);
-
                 // Close the main activity
                 finish();
 
@@ -78,6 +76,7 @@ public class SignupActivity extends AppCompatActivity {
                 String email = emailEditText.getText().toString().trim();
                 String mobileNumber = mobileNumberEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
+                String imagepath = imagePathEditText.getText().toString();
 
 
                 // Validate input fields
@@ -119,9 +118,17 @@ public class SignupActivity extends AppCompatActivity {
 
 
                 // Insert user details into SQLite database
-                if (insertUserDetails(firstName, lastName, email, mobileNumber, password)) {
-//                    Show a quick message
-                    Toast.makeText(SignupActivity.this, "Signup successful", Toast.LENGTH_SHORT).show();
+
+                try {
+//                    Try to save the data into the sqlite database
+                    UserModel userModel =new UserModel(firstName, lastName, email, mobileNumber, password, imagepath);
+//                    Instantiate the database helper class
+                    databaseHelper = new DatabaseHelper(SignupActivity.this);
+
+                    boolean success = databaseHelper.addOneUser(userModel);
+
+//                    Show a quick success message
+                    Toast.makeText(SignupActivity.this, success + ": Signup was successful.", Toast.LENGTH_SHORT).show();
 //                    Clear the fields of their values
                     clearEditTextFields();
                     // Start the Login activity
@@ -130,26 +137,12 @@ public class SignupActivity extends AppCompatActivity {
                     startActivity(intent);
                     // Close the signup activity
                     finish();
-                } else {
+                }catch (Exception e){
+//                    Show an error message to the user to let them know the insert failed
                     Toast.makeText(SignupActivity.this, "Signup failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    }
-
-
-    private boolean insertUserDetails(String firstName, String lastName, String email, String mobileNumber, String password){
-
-        SQLiteDatabase db = databaseHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.COLUMN_FIRSTNAME, firstName);
-        contentValues.put(DatabaseHelper.COLUMN_LASTNAME, lastName);
-        contentValues.put(DatabaseHelper.COLUMN_EMAIL, email);
-        contentValues.put(DatabaseHelper.COLUMN_MOBILE, mobileNumber);
-        contentValues.put(DatabaseHelper.COLUMN_PASSWORD, password);
-        long result = db.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
-        return result != -1;
-
     }
 
     public void clearEditTextFields(){

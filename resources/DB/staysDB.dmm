@@ -1,0 +1,2411 @@
+{
+	"tables": {
+		"6a966a52-29eb-4517-80d4-9d3ef7d82122": {
+			"id": "6a966a52-29eb-4517-80d4-9d3ef7d82122",
+			"visible": true,
+			"name": "user",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "74184295-00e6-4275-b0d4-b4f14f9fdf13",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "85cb93fe-ad2c-426e-9708-2e5ab9444f4a",
+					"name": "firstname",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "2bd8d0fd-7e4c-4b97-9d6d-188bb8945b6a",
+					"name": "lastname",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "317134e8-c71f-4dbf-babf-a5e6d2a827d4",
+					"name": "email",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "22510323-ab0c-4689-ae4b-00dea79d6c06",
+					"name": "mobile",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3fd11414-0868-4461-9104-a6fdbee01f5c",
+					"name": "password",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "47118dd6-85ce-4f49-a212-023f0fca2890",
+					"name": "image",
+					"datatype": "BLOB",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "f526a7e0-a0f9-47f7-ab82-5be3b9ecfe89",
+					"name": "image_uri",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "https://drive.google.com/file/d/1KCZyhsxMATy76quSiSvKtLuFwfVWjbkA/view?usp=drive_link",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"eafda286-ecf3-4b4c-b4d3-d020d6afdda3",
+				"c7ab533f-c2db-4c94-93cf-bd576b0743ac"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "8e9ff36e-4820-4f48-b241-e7672b88b216",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "4a088c15-ebf6-46ce-ab5c-1bfa9331f82f",
+							"colid": "74184295-00e6-4275-b0d4-b4f14f9fdf13"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"a809a1e0-d9fc-4e7e-baa3-1e45be7b0acf": {
+			"id": "a809a1e0-d9fc-4e7e-baa3-1e45be7b0acf",
+			"visible": true,
+			"name": "hotel_image",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "47fb7fc5-6cd4-4abe-8e4d-3b3e010cc0be",
+					"name": "hotel_image_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "52aebc98-fdfa-4083-b7e3-26e798f6df0a",
+					"name": "image",
+					"datatype": "BLOB",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "90203e01-b512-40ff-a4b4-2db8d46d82d0",
+					"name": "image_uri",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "f2679091-57d3-417c-93e3-94bcfbc3be8e",
+					"name": "hotel_holel_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"9c209fc8-2fa0-41fa-96de-c6d2725af6d4"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "7b628d85-8eee-44d3-997d-06ef045e14b6",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "be10d73c-df34-4ca0-ba9d-0218a7efe926",
+							"colid": "47fb7fc5-6cd4-4abe-8e4d-3b3e010cc0be"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"6d8a4724-2bc7-46e4-9aac-cea68dfd3dd8": {
+			"id": "6d8a4724-2bc7-46e4-9aac-cea68dfd3dd8",
+			"visible": true,
+			"name": "property_review",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "64cee9d0-4cde-4991-b8c3-c05f13a56e40",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "b3797ed5-41e8-4fbc-84e9-46745d3f7c4f",
+					"name": "description",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c9c30eab-f782-4752-9765-c4873a802a34",
+					"name": "rating",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "f24e10a6-5505-454d-a20f-33ca3d4d69df",
+					"name": "user_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"eafda286-ecf3-4b4c-b4d3-d020d6afdda3"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "68a2e9aa-cbcd-4800-ba06-06c58da505c1",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "5ad12be9-6d7e-49f2-abba-f4f48f0bc76c",
+							"colid": "64cee9d0-4cde-4991-b8c3-c05f13a56e40"
+						},
+						{
+							"id": "ef8f3e8f-3703-4926-aad5-4d531219105d",
+							"colid": "f24e10a6-5505-454d-a20f-33ca3d4d69df"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"8388fec0-9a89-4548-ac9e-fccae63eecd8": {
+			"id": "8388fec0-9a89-4548-ac9e-fccae63eecd8",
+			"visible": true,
+			"name": "booking",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "20b85299-4d62-410c-b592-70ab8ea6f6a6",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "15f84789-0f99-4d2f-bd07-bb2e00403ad0",
+					"name": "booking_reference",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "e2b0d94c-879b-41c8-978a-4c55e4a284f7",
+					"name": "start_date",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "1cf02167-db8b-4ca7-8179-a2c12da8ecb8",
+					"name": "end_date",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "0313c38f-da68-4216-b649-b61f618c0236",
+					"name": "no_of_nights",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "0c2a8c2f-bdff-42d9-9aad-6eb7175c4dfd",
+					"name": "user_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": true
+				},
+				{
+					"id": "19e58b58-35b2-42a8-8cfd-3bd12f4af416",
+					"name": "availablity_status",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "Booked",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"c7ab533f-c2db-4c94-93cf-bd576b0743ac",
+				"51060869-d519-4bcd-a915-b35bc383298e"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "efa5d005-a804-4ae9-ae97-abaf5c96beb8",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "945f5873-1d91-4ef1-bf98-6b3f3700e3f1",
+							"colid": "20b85299-4d62-410c-b592-70ab8ea6f6a6"
+						},
+						{
+							"id": "fa6746d2-e635-49e1-bd21-1d00dccd862c",
+							"colid": "0c2a8c2f-bdff-42d9-9aad-6eb7175c4dfd"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"601b5eba-51fb-4674-a11b-a6fc121f732c": {
+			"id": "601b5eba-51fb-4674-a11b-a6fc121f732c",
+			"visible": true,
+			"name": "hotel",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "c15047a1-06a5-4194-bcf1-3995b14a82ce",
+					"name": "holel_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "de22ef6b-f903-4b7f-be6f-5f4557eec70f",
+					"name": "hotel_name",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "1b941b5a-9c2e-4fde-bd43-4a68a8628fd2",
+					"name": "number_of_rooms",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ebeee2f7-c180-45cb-a5fa-9c3bcc39b2d6",
+					"name": "number_of_bathrooms",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7b9827af-0ac2-4505-8afc-27e6f47b6141",
+					"name": "room_type",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ba4fba42-007d-4f96-8b87-1f3b7c9f584e",
+					"name": "star_rating",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "4da6a3d0-d23c-4b79-a0f8-41bd19384e4f",
+					"name": "swimming_pool_status",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "e1b2e64b-a5dd-463f-a6d8-22854aeea990",
+					"name": "child_friendly",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "No",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "a8949053-bb54-4c4d-95f3-d94047b46dab",
+					"name": "rate",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "00.00",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "fd9b5a5e-e9f3-4486-a2ed-95650f7aaf71",
+					"name": "country",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "441958c6-e36d-472b-a5ee-e1c5f5adc23f",
+					"name": "location",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "eb2df835-5ec0-4c3b-9dd0-575332c072cf",
+					"name": "building_no",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9f2e9f90-e20c-4c13-9c2b-a9e225d567b8",
+					"name": "address",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c6c2564f-03bb-42b2-befb-fc8f706f7058",
+					"name": "postcode",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c4122300-2a07-4fa4-b5d3-4ce1a9968fea",
+					"name": "disability_friendly",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "Yes",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"9c209fc8-2fa0-41fa-96de-c6d2725af6d4"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "da96366a-749a-46a2-b10c-417baf5ad8a4",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "8fcb9958-6cb5-4cd4-8ec0-bc8834fad28b",
+							"colid": "c15047a1-06a5-4194-bcf1-3995b14a82ce"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"f732dda4-565c-4efd-b67b-ccd45898b38c": {
+			"id": "f732dda4-565c-4efd-b67b-ccd45898b38c",
+			"visible": true,
+			"name": "cabin",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "c433e0ea-96fa-42d0-9d33-4fc66fcd0833",
+					"name": "cabin_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "2100e3b9-d5c1-4349-a487-5c9126c3ffeb",
+					"name": "country",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ba1f5e07-1bb2-4ffc-ad96-8a7d2ac74d47",
+					"name": "location",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9e1c76e5-1015-49d4-87ab-1dae9c6197ea",
+					"name": "house_no",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "78286a41-ed53-4373-af80-a42f6964fb0e",
+					"name": "address_line",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9ff220e9-9e54-48eb-831c-25a4029b2599",
+					"name": "postcode",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "97e13a57-db21-4af4-9ecf-d436a5f33b50",
+					"name": "number_of_rooms",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "692c8124-a82c-4f6d-ac02-ac076c8e7e17",
+					"name": "number_of_bathrooms",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "60b56c2b-68e0-4db6-9635-53b86604a9dd",
+					"name": "number_of_toilets",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "70777c9d-c3a0-40d3-9950-4ea9862f339c",
+					"name": "child_friendly",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "No",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "8dd6afda-a1f1-4a35-aca5-b32ab59e918a",
+					"name": "rental_type",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "Short-term",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "dc9de759-169d-452e-8e45-5abfce1ba43f",
+					"name": "disability_friendly",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "Yes",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7ec96d02-505e-4b3b-9f82-dd55a255e5d4",
+					"name": "multi_share",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "No",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3ea105fd-7936-474e-bed4-b5484ed7626d",
+					"name": "rate",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "00.00",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "d0e4a365-60fd-4349-a9ad-276005bc1236",
+					"name": "description",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"68008638-6256-45f3-ad82-2e7bb8ecc98d"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "62afd682-ddb1-471a-a501-86a832a90e62",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "11a0e33d-c4f7-40f9-b762-4967c1842681",
+							"colid": "c433e0ea-96fa-42d0-9d33-4fc66fcd0833"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"3e4ebf7d-51f3-43f2-b646-acddcf65b415": {
+			"id": "3e4ebf7d-51f3-43f2-b646-acddcf65b415",
+			"visible": true,
+			"name": "beach",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "e46bacc9-da95-4983-8207-1d65fad5355a",
+					"name": "beach_house_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "a46a48d0-7ab4-4c5c-b5e9-4bc66b42f43b",
+					"name": "country",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "f56327b0-455e-4966-9e8f-ca1616236d4b",
+					"name": "location",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3f8b90e4-5617-4e3e-8fc1-d9fb678a042a",
+					"name": "house_no",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "90873e49-8e4e-4c3d-8a26-3966dff654b8",
+					"name": "address",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7d4f2459-5aa2-4250-b196-d549bdfdca33",
+					"name": "postcode",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "e03c3efe-b7db-491f-a300-a51880f8228c",
+					"name": "no_of_rooms",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "1",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "4750cde8-ea50-4104-b1e8-a998dfbd17c7",
+					"name": "no_of_bathrooms",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "1",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "73788956-aee3-4dc6-93c1-7845426b3731",
+					"name": "no_of_toilet",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "1",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "0fd8999b-2cfd-42a6-b0e0-2ebec6759a02",
+					"name": "rental_type",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "Short-Term",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "bc3de5c3-ca57-45f6-948f-abe46d019d98",
+					"name": "disability_friendly",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "Yes",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"88c50c08-cfac-496f-bdb1-2bedbd0bfb1d"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "43e52c25-d652-49ea-8ec0-cd867573f637",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "bcc5aae6-3e4a-4a47-8269-52e7897ac230",
+							"colid": "e46bacc9-da95-4983-8207-1d65fad5355a"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"791bcd63-fc74-4563-bb38-f23d3e8e1115": {
+			"id": "791bcd63-fc74-4563-bb38-f23d3e8e1115",
+			"visible": true,
+			"name": "camping",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "e2d31291-3020-4d8a-bdf7-f11a9667a48d",
+					"name": "camp_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "eeb2a1ee-2c4a-40b6-b9ca-ffd58ae41adc",
+					"name": "country",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "d635dffe-c5fb-4a4b-9fb6-dff0f0c6bbd2",
+					"name": "location",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "d74d75c6-9eb8-492c-a0bd-4fcdebf90068",
+					"name": "van_tent_no",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9e42aa69-dbb5-47e7-8a70-b8c65387b9ce",
+					"name": "address",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "122d1303-4c2c-4c0d-b713-4adab2b9fcbd",
+					"name": "postcode",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "db409301-8d98-483e-b187-b07aec63d063",
+					"name": "no_available",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "1",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "4ebf5854-ab11-47f0-a2c8-68c3e119659a",
+					"name": "no_of_bathrooms",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "1",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "424aee71-3e63-4cfa-b5c5-331585317130",
+					"name": "no_of_toilet",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "1",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9d86fc45-a68d-48dd-a04c-ba9087811a0e",
+					"name": "rental_type",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "Short-Term",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "21adc134-e59b-4bc9-8e8b-865d19ddc6f2",
+					"name": "disability_friendly",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "Yes",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"e0fa6f9e-42fa-4239-8bec-8268d9bc376d"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "ab857668-9c14-453b-ab31-b09a2111e41b",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "28bb26f5-3dd1-40cb-8a54-229e50e6df42",
+							"colid": "e2d31291-3020-4d8a-bdf7-f11a9667a48d"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"b86b81ff-50b8-4fff-9994-9e82e4535d01": {
+			"id": "b86b81ff-50b8-4fff-9994-9e82e4535d01",
+			"visible": true,
+			"name": "cabin_image",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "02380587-3756-4f69-97c6-7adc8f69ea00",
+					"name": "cabin_image_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": "",
+					"fk": false
+				},
+				{
+					"id": "98e2c75d-6110-4c01-ad87-6b3d199d4e5b",
+					"name": "image",
+					"datatype": "BLOB",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": false
+				},
+				{
+					"id": "46c2906b-3e5d-4381-913e-4efc078e5287",
+					"name": "image_uri",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ab797cc4-a7ad-4e5e-b206-74c05a8b7bf7",
+					"name": "cabin_cabin_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"68008638-6256-45f3-ad82-2e7bb8ecc98d"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "70c1c070-621a-4c84-a28e-1cc0455e0428",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "1d7cc05c-30b7-4c34-b65e-ef1e2a8802f0",
+							"colid": "02380587-3756-4f69-97c6-7adc8f69ea00"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"63bc782e-0007-4602-94b0-ac25020806a9": {
+			"id": "63bc782e-0007-4602-94b0-ac25020806a9",
+			"visible": true,
+			"name": "beach_image",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "8064baec-4d2a-4b76-a95b-258e46d555e8",
+					"name": "beach_image_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": "",
+					"fk": false
+				},
+				{
+					"id": "8eb36b45-0173-441e-860e-a051a0a49b20",
+					"name": "image",
+					"datatype": "BLOB",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": false
+				},
+				{
+					"id": "42c7aeff-9ae7-4b47-87b6-1e3e17072b1d",
+					"name": "image_uri",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "6affe8c1-d80e-442e-9830-097137d73316",
+					"name": "beach_beach_house_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"88c50c08-cfac-496f-bdb1-2bedbd0bfb1d"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "ce1fad5b-7893-490c-a0c2-436f0f7cd4e2",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "a7a86088-9e3a-4d7b-8472-9a9d476a9bf9",
+							"colid": "8064baec-4d2a-4b76-a95b-258e46d555e8"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"d9f4e143-49a1-43d3-ba37-043f2a3a7c59": {
+			"id": "d9f4e143-49a1-43d3-ba37-043f2a3a7c59",
+			"visible": true,
+			"name": "camp_image",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "1000ff5d-4d26-4f81-9b96-035c318edbaf",
+					"name": "camp_image_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": "",
+					"fk": false
+				},
+				{
+					"id": "47052f28-7ef6-42fd-9ec9-277df06c4d42",
+					"name": "image",
+					"datatype": "BLOB",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": false
+				},
+				{
+					"id": "8afeefcb-d21c-4fbd-a553-cf45b02e4887",
+					"name": "image_uri",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "60c33237-6be1-4541-b8a1-f4dd48519aeb",
+					"name": "camping_camp_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": "",
+					"fk": true
+				}
+			],
+			"relations": [
+				"e0fa6f9e-42fa-4239-8bec-8268d9bc376d"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "ec0df767-b975-4725-8ff0-c9f36c730365",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "7a60103a-5ce2-4aeb-8d8b-57841c9ec688",
+							"colid": "1000ff5d-4d26-4f81-9b96-035c318edbaf"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"d5ce61bf-6a75-405f-bbaf-0d8faf24dcf9": {
+			"id": "d5ce61bf-6a75-405f-bbaf-0d8faf24dcf9",
+			"visible": true,
+			"name": "availablity",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "d4ff3254-f55a-472d-adcb-eea7a3d0aa41",
+					"name": "availability_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": true
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "516696d4-53b3-43da-a098-0f313c91032d",
+					"name": "property_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7325b2cf-ce8d-40c3-9615-1c6a9fcca771",
+					"name": "start_date",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "e6ce6201-b3c0-4ea9-b65e-ea02752e023b",
+					"name": "end_date",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "d2f2f0b0-a4f2-44a5-8e48-c18dcb9b7bed",
+					"name": "no_of_days",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7513d28c-eb8a-4055-879a-e16aedfbbc54",
+					"name": "availability_status",
+					"datatype": "TEXT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"51060869-d519-4bcd-a915-b35bc383298e"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "929ce92c-fe5a-4d59-952c-d7d8f10592aa",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "e3f571e5-ee2f-4da6-987b-677cddb8a7ad",
+							"colid": "d4ff3254-f55a-472d-adcb-eea7a3d0aa41"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"beforeScript": "",
+			"afterScript": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		}
+	},
+	"relations": {
+		"eafda286-ecf3-4b4c-b4d3-d020d6afdda3": {
+			"id": "eafda286-ecf3-4b4c-b4d3-d020d6afdda3",
+			"visible": true,
+			"name": "user_property_review",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "8e9ff36e-4820-4f48-b241-e7672b88b216",
+			"parent": "6a966a52-29eb-4517-80d4-9d3ef7d82122",
+			"child": "6d8a4724-2bc7-46e4-9aac-cea68dfd3dd8",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "9a779f79-e427-43bb-9de7-3f3cd43e08c1",
+					"parentcol": "74184295-00e6-4275-b0d4-b4f14f9fdf13",
+					"childcol": "f24e10a6-5505-454d-a20f-33ca3d4d69df"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"c7ab533f-c2db-4c94-93cf-bd576b0743ac": {
+			"id": "c7ab533f-c2db-4c94-93cf-bd576b0743ac",
+			"visible": true,
+			"name": "user_booking",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "8e9ff36e-4820-4f48-b241-e7672b88b216",
+			"parent": "6a966a52-29eb-4517-80d4-9d3ef7d82122",
+			"child": "8388fec0-9a89-4548-ac9e-fccae63eecd8",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "ecc98f59-82f7-4b41-9382-d33dea664eec",
+					"parentcol": "74184295-00e6-4275-b0d4-b4f14f9fdf13",
+					"childcol": "0c2a8c2f-bdff-42d9-9aad-6eb7175c4dfd"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"9c209fc8-2fa0-41fa-96de-c6d2725af6d4": {
+			"id": "9c209fc8-2fa0-41fa-96de-c6d2725af6d4",
+			"visible": true,
+			"name": "hotel_image",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "da96366a-749a-46a2-b10c-417baf5ad8a4",
+			"parent": "601b5eba-51fb-4674-a11b-a6fc121f732c",
+			"child": "a809a1e0-d9fc-4e7e-baa3-1e45be7b0acf",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "062dd3e9-76bd-451b-8e34-f250679502e8",
+					"parentcol": "c15047a1-06a5-4194-bcf1-3995b14a82ce",
+					"childcol": "f2679091-57d3-417c-93e3-94bcfbc3be8e"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"88c50c08-cfac-496f-bdb1-2bedbd0bfb1d": {
+			"id": "88c50c08-cfac-496f-bdb1-2bedbd0bfb1d",
+			"visible": true,
+			"name": "beach_beach_image",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "43e52c25-d652-49ea-8ec0-cd867573f637",
+			"parent": "3e4ebf7d-51f3-43f2-b646-acddcf65b415",
+			"child": "63bc782e-0007-4602-94b0-ac25020806a9",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "c3067548-4a88-45c1-b516-c6d5b9e54152",
+					"parentcol": "e46bacc9-da95-4983-8207-1d65fad5355a",
+					"childcol": "6affe8c1-d80e-442e-9830-097137d73316"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"68008638-6256-45f3-ad82-2e7bb8ecc98d": {
+			"id": "68008638-6256-45f3-ad82-2e7bb8ecc98d",
+			"visible": true,
+			"name": "cabin_cabin_image",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "62afd682-ddb1-471a-a501-86a832a90e62",
+			"parent": "f732dda4-565c-4efd-b67b-ccd45898b38c",
+			"child": "b86b81ff-50b8-4fff-9994-9e82e4535d01",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "259cb305-5802-47b4-94d0-c34258e97288",
+					"parentcol": "c433e0ea-96fa-42d0-9d33-4fc66fcd0833",
+					"childcol": "ab797cc4-a7ad-4e5e-b206-74c05a8b7bf7"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"51060869-d519-4bcd-a915-b35bc383298e": {
+			"id": "51060869-d519-4bcd-a915-b35bc383298e",
+			"visible": true,
+			"name": "availablity_booking",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "929ce92c-fe5a-4d59-952c-d7d8f10592aa",
+			"parent": "d5ce61bf-6a75-405f-bbaf-0d8faf24dcf9",
+			"child": "8388fec0-9a89-4548-ac9e-fccae63eecd8",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "e39fcf53-4cd3-42fa-9452-cfe478ea63e9",
+					"parentcol": "d4ff3254-f55a-472d-adcb-eea7a3d0aa41",
+					"childcol": "19e58b58-35b2-42a8-8cfd-3bd12f4af416"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"e0fa6f9e-42fa-4239-8bec-8268d9bc376d": {
+			"id": "e0fa6f9e-42fa-4239-8bec-8268d9bc376d",
+			"visible": true,
+			"name": "camping_camp_image",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ab857668-9c14-453b-ab31-b09a2111e41b",
+			"parent": "791bcd63-fc74-4563-bb38-f23d3e8e1115",
+			"child": "d9f4e143-49a1-43d3-ba37-043f2a3a7c59",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "610b70f1-6d3a-4bfa-9808-9304963cca5a",
+					"parentcol": "e2d31291-3020-4d8a-bdf7-f11a9667a48d",
+					"childcol": "60c33237-6be1-4541-b8a1-f4dd48519aeb"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "stays_db",
+		"id": "bf2798fd-e56d-4332-99e1-926bc1db1ad8",
+		"activeDiagram": "e0d327aa-653c-4e13-aaa2-7a8b568b945e",
+		"desc": "Database for storing data for student android project.",
+		"path": "",
+		"type": "SQLITE",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 7,
+			"minor": 2,
+			"extra": 0
+		},
+		"writeFileParam": true,
+		"authorName": "",
+		"companyDetails": "",
+		"companyUrl": "",
+		"def_coltopk": true,
+		"sqlSettings": {
+			"wrapLines": true,
+			"wrapOffset": 80,
+			"indent": true,
+			"indentationString": "spaces",
+			"indentationSize": 2,
+			"limitItemsOnLine": true,
+			"maxListItemsOnLine": 3,
+			"statementDelimiter": ";",
+			"routineDelimiter": ";",
+			"keywordCase": "upper",
+			"identiferCase": "original"
+		},
+		"lastSaved": "Fri Jul 28 2023 12:24:08 GMT+0100 (British Summer Time)"
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"e0d327aa-653c-4e13-aaa2-7a8b568b945e": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "e0d327aa-653c-4e13-aaa2-7a8b568b945e",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 1,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"6a966a52-29eb-4517-80d4-9d3ef7d82122": {
+					"referencedItemId": "6a966a52-29eb-4517-80d4-9d3ef7d82122",
+					"x": 802,
+					"y": 240,
+					"gHeight": 171,
+					"gWidth": 181,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"a809a1e0-d9fc-4e7e-baa3-1e45be7b0acf": {
+					"referencedItemId": "a809a1e0-d9fc-4e7e-baa3-1e45be7b0acf",
+					"x": 71,
+					"y": 30,
+					"gHeight": 99,
+					"gWidth": 230,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"6d8a4724-2bc7-46e4-9aac-cea68dfd3dd8": {
+					"referencedItemId": "6d8a4724-2bc7-46e4-9aac-cea68dfd3dd8",
+					"x": 826,
+					"y": 517,
+					"gHeight": 99,
+					"gWidth": 189,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"8388fec0-9a89-4548-ac9e-fccae63eecd8": {
+					"referencedItemId": "8388fec0-9a89-4548-ac9e-fccae63eecd8",
+					"x": 770,
+					"y": 41,
+					"gHeight": 153,
+					"gWidth": 230,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"601b5eba-51fb-4674-a11b-a6fc121f732c": {
+					"referencedItemId": "601b5eba-51fb-4674-a11b-a6fc121f732c",
+					"x": 74,
+					"y": 151,
+					"gHeight": 297,
+					"gWidth": 255,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"f732dda4-565c-4efd-b67b-ccd45898b38c": {
+					"referencedItemId": "f732dda4-565c-4efd-b67b-ccd45898b38c",
+					"x": 47,
+					"y": 473,
+					"gHeight": 297,
+					"gWidth": 255,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"3e4ebf7d-51f3-43f2-b646-acddcf65b415": {
+					"referencedItemId": "3e4ebf7d-51f3-43f2-b646-acddcf65b415",
+					"x": 361,
+					"y": 220,
+					"gHeight": 225,
+					"gWidth": 235,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"791bcd63-fc74-4563-bb38-f23d3e8e1115": {
+					"referencedItemId": "791bcd63-fc74-4563-bb38-f23d3e8e1115",
+					"x": 403,
+					"y": 632,
+					"gHeight": 225,
+					"gWidth": 225,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"b86b81ff-50b8-4fff-9994-9e82e4535d01": {
+					"referencedItemId": "b86b81ff-50b8-4fff-9994-9e82e4535d01",
+					"x": 404,
+					"y": 510,
+					"gHeight": 99,
+					"gWidth": 231,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"63bc782e-0007-4602-94b0-ac25020806a9": {
+					"referencedItemId": "63bc782e-0007-4602-94b0-ac25020806a9",
+					"x": 366,
+					"y": 44,
+					"gHeight": 99,
+					"gWidth": 275,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"d9f4e143-49a1-43d3-ba37-043f2a3a7c59": {
+					"referencedItemId": "d9f4e143-49a1-43d3-ba37-043f2a3a7c59",
+					"x": 45,
+					"y": 809,
+					"gHeight": 99,
+					"gWidth": 246,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				},
+				"d5ce61bf-6a75-405f-bbaf-0d8faf24dcf9": {
+					"referencedItemId": "d5ce61bf-6a75-405f-bbaf-0d8faf24dcf9",
+					"x": 726,
+					"y": 670,
+					"gHeight": 135,
+					"gWidth": 224,
+					"color": "#ffffff",
+					"background": "#03a9f4",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10"
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			},
+			"type": "erd",
+			"showHorizontal": true,
+			"showDescriptions": true,
+			"showIndicators": true,
+			"showProgress": true,
+			"lineWidth": "2",
+			"boxSize": "0",
+			"showIndicatorCaptions": true,
+			"showEstimatedSize": false,
+			"showSchemaContainer": true,
+			"showEmbeddedInParents": true,
+			"showCardinalityCaptions": true,
+			"showColumns": true,
+			"showColumnDataTypes": true,
+			"showSampleData": false,
+			"showTableIndexes": true,
+			"showTableDescriptions": false,
+			"showRelations": true,
+			"backgroundImage": "na",
+			"descriptionsColor": "transparent"
+		}
+	},
+	"order": [
+		"6a966a52-29eb-4517-80d4-9d3ef7d82122",
+		"a809a1e0-d9fc-4e7e-baa3-1e45be7b0acf",
+		"6d8a4724-2bc7-46e4-9aac-cea68dfd3dd8",
+		"8388fec0-9a89-4548-ac9e-fccae63eecd8",
+		"601b5eba-51fb-4674-a11b-a6fc121f732c",
+		"f732dda4-565c-4efd-b67b-ccd45898b38c",
+		"3e4ebf7d-51f3-43f2-b646-acddcf65b415",
+		"791bcd63-fc74-4563-bb38-f23d3e8e1115",
+		"d9f4e143-49a1-43d3-ba37-043f2a3a7c59",
+		"63bc782e-0007-4602-94b0-ac25020806a9",
+		"b86b81ff-50b8-4fff-9994-9e82e4535d01",
+		"d5ce61bf-6a75-405f-bbaf-0d8faf24dcf9",
+		"eafda286-ecf3-4b4c-b4d3-d020d6afdda3",
+		"c7ab533f-c2db-4c94-93cf-bd576b0743ac",
+		"9c209fc8-2fa0-41fa-96de-c6d2725af6d4",
+		"88c50c08-cfac-496f-bdb1-2bedbd0bfb1d",
+		"68008638-6256-45f3-ad82-2e7bb8ecc98d",
+		"51060869-d519-4bcd-a915-b35bc383298e",
+		"e0fa6f9e-42fa-4239-8bec-8268d9bc376d"
+	],
+	"collapsedTreeItems": [],
+	"reverseStats": {}
+}

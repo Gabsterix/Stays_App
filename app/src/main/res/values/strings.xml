@@ -8,7 +8,7 @@
     <string name="booked_fragment">Booked fragment</string>
     <string name="account_fragment">User Account fragment</string>
 
-
+    <string name="tab_home">Home</string>
     <string name="tab_cabin">Cabin</string>
     <string name="tab_beach">Beach</string>
     <string name="tab_camping">Camping</string>

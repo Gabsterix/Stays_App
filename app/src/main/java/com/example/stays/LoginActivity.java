@@ -3,6 +3,7 @@ package com.example.stays;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.RestrictionEntry;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -20,8 +21,6 @@ public class LoginActivity extends AppCompatActivity {
 
 //    Create object variable to for the checkbox
     private CheckBox rememberMeCheckBox;
-
-//    EditText emailEdittext, passwordEditText;
 
 
 //    Create an object variable for the signup text view
@@ -56,8 +55,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 //                Retrieve data from the text field
-                String user = usernameEditText.getText().toString().trim();
-                String password = passwordEditText.getText().toString().trim();
+//                String user = usernameEditText.getText().toString().trim();
+//                String password = passwordEditText.getText().toString().trim();
 
                 // Start the Signup activity
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
@@ -68,45 +67,55 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-//        Create an onclick event listener for the login button object
+//        Create an onClick event listener for the login button object
         objBTNLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                PART 1: Retrieve data from the text field
+                String user = usernameEditText.getText().toString().trim();
+                String password = passwordEditText.getText().toString().trim();
 
-                //                Retrieve data from the text field
-//                String user = usernameEditText.getText().toString().trim();
-//                String password = passwordEditText.getText().toString().trim();
+//                PART 2: Perform field validations
+                if (user.isEmpty()) {
+                    usernameEditText.setError("Please enter your email address");
+                    usernameEditText.requestFocus();
+                    return;
+                }
 
-//                Perform field validations
-//                if (user.isEmpty()) {
-//                    usernameEditText.setError("Please enter your email address");
-//                    usernameEditText.requestFocus();
-//                    return;
-//                }
-//
-//                if (!Patterns.EMAIL_ADDRESS.matcher(user).matches()) {
-//                    usernameEditText.setError("Please enter a valid email address");
-//                    usernameEditText.requestFocus();
-//                    return;
-//                }
-//
-//                if (password.isEmpty()) {
-//                    passwordEditText.setError("Please enter a password");
-//                    passwordEditText.requestFocus();
-//                    return;
-//                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(user).matches()) {
+                    usernameEditText.setError("Please enter a valid email address");
+                    usernameEditText.requestFocus();
+                    return;
+                }
 
-//                Retrieve data from SQLite database and validate
+                if (password.isEmpty()) {
+                    passwordEditText.setError("Please enter a password");
+                    passwordEditText.requestFocus();
+                    return;
+                }
 
-//                Send user to home dashboard activity
+//                PART 3: Retrieve data from SQLite database and validate
+                try {
+//                    True part: send the user to the home screen
+//                    Create an object of the User Model Class
+                    UserModel userModel =new UserModel(user,password);
+//                    Instantiate the database helper class
+                    databaseHelper = new DatabaseHelper(LoginActivity.this);
+//                    Create a boolean variable to store the connection
+                    boolean success = databaseHelper.validateUser(userModel);
+//                    Show a message saying login was successful
+                    Toast.makeText(LoginActivity.this, success + ": Sign-in  was successful.", Toast.LENGTH_SHORT).show();
 
-                // Start the Signup activity
-                Intent intent = new Intent(LoginActivity.this, HomeDashboardActivity.class);
-                startActivity(intent);
+                    // Start the Signup activity
+                    Intent intent = new Intent(LoginActivity.this, HomeDashboardActivity.class);
+                    startActivity(intent);
 
-                // Close the main activity
-                finish();
-
+                    // Close the main activity
+                    finish();
+                } catch (Exception e){
+//                    False part: Show incorrect message
+                    Toast.makeText(LoginActivity.this,"Login failed.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -117,31 +126,31 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-    public void loginUser() {
-        // Retrieve email and password from EditText fields
-            String user = usernameEditText.getText().toString().trim();
-            String password = passwordEditText.getText().toString().trim();
-
-        // Validate input
-        if (user.isEmpty() || password.isEmpty()) {
-            showToast("Please enter email and password");
-            return;
-        }
-
-        // Perform the login process
-        if (databaseHelper.validateUser(user, password)) {
-            showToast("Login successful!");
-            // TODO: Add code to navigate to the next activity after successful login.
-            // Start the Signup activity
-            Intent intent = new Intent(LoginActivity.this, HomeDashboardActivity.class);
-            startActivity(intent);
-
-            // Close the main activity
-            finish();
-        } else {
-            showToast("Login failed. Invalid email or password.");
-        }
-    }
+//    public void loginUser() {
+//        // Retrieve email and password from EditText fields
+//            String user = usernameEditText.getText().toString().trim();
+//            String password = passwordEditText.getText().toString().trim();
+//
+//        // Validate input
+//        if (user.isEmpty() || password.isEmpty()) {
+//            showToast("Please enter email and password");
+//            return;
+//        }
+//
+//        // Perform the login process
+//        if (databaseHelper.validateUser(user, password)) {
+//            showToast("Login successful!");
+//            // TODO: Add code to navigate to the next activity after successful login.
+//            // Start the Signup activity
+//            Intent intent = new Intent(LoginActivity.this, HomeDashboardActivity.class);
+//            startActivity(intent);
+//
+//            // Close the main activity
+//            finish();
+//        } else {
+//            showToast("Login failed. Invalid email or password.");
+//        }
+//    }
 
     //        Method to retrieve the data from the data base and compare the result
 //    public boolean validateCurrentUser( String user, String password ) {
