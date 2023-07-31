@@ -72,7 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         createPropertyImages(sqLiteDatabase);
 
 //        Create Reviews table
-//        createReviewsTable(sqLiteDatabase);
+        createReviewsTable(sqLiteDatabase);
 //        Create Booking table
 //        createBookingTable(sqLiteDatabase);
 
@@ -408,24 +408,22 @@ public boolean validateUser(UserModel userModel) {
                 + COLUMN_4 + ", "
                 + COLUMN_5 + ")"
                 + " VALUES "
-                + "('Great experience! Friendly staff and excellent amenities.', 4.5, 'John Doe', 13),"
-                + "('The property was clean and well-maintained. Highly recommended.', 4.8, 'Jane Smith', 2),"
-                + "('Average stay. The room was small and noisy.', 3.2, 'David Johnson', 16),"
-                + "('Wonderful location with beautiful views.', 4.7, 'Emily Brown', 7),"
-                + "('Not what I expected. Disappointed with the service.', 2.5, 'Michael Wilson', 4),"
-                + "('The property was outdated and needs renovation.', 3.0, 'Laura Anderson', 7),"
-                + "('Absolutely loved it! Will definitely come back.', 5.0, 'Sarah Lee', 14),"
-                + "('Friendly staff, but the food options were limited.', 4.0, 'Robert Taylor', 13),"
-                + "('Good value for money. Clean and comfortable rooms.', 4.3, 'Jennifer Martinez', 8),"
-                + "('Enjoyed the pool and spa facilities. Great for families.', 4.6, 'Christopher Davis', 16),"
-                + "('The property had a nice ambiance and helpful staff.', 4.4, 'Elizabeth Clark', 5),"
-                + "('Not suitable for disabled guests. Limited accessibility.', 2.8, 'William Miller', 11);";
+                + "('Great experience! Friendly staff and excellent amenities.', 4.5, 'John Doe', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 13),"
+                + "('The property was clean and well-maintained. Highly recommended.', 4.8, 'Jane Smith', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 2),"
+                + "('Average stay. The room was small and noisy.', 3.2, 'David Johnson', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 16),"
+                + "('Wonderful location with beautiful views.', 4.7, 'Emily Brown', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 7),"
+                + "('Not what I expected. Disappointed with the service.', 2.5, 'Michael Wilson', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 4),"
+                + "('The property was outdated and needs renovation.', 3.0, 'Laura Anderson', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 7),"
+                + "('Absolutely loved it! Will definitely come back.', 5.0, 'Sarah Lee', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 14),"
+                + "('Friendly staff, but the food options were limited.', 4.0, 'Robert Taylor', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 13),"
+                + "('Good value for money. Clean and comfortable rooms.', 4.3, 'Jennifer Martinez', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 8),"
+                + "('Enjoyed the pool and spa facilities. Great for families.', 4.6, 'Christopher Davis', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 16),"
+                + "('The property had a nice ambiance and helpful staff.', 4.4, 'Elizabeth Clark', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 5),"
+                + "('Not suitable for disabled guests. Limited accessibility.', 2.8, 'William Miller', 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 11);";
 //        Execute the insert statement
         sqLiteDatabase.execSQL(insertDefaultData);
 
     }
-
-
 //    ================ End of Property Reviews Table =============
 
 
