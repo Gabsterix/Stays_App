@@ -124,10 +124,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 public boolean validateUser(UserModel userModel) {
     SQLiteDatabase db = this.getReadableDatabase();
 
-//    Set table name
+    // Set table name
     TABLE_NAME = "user";
 
-    //        Set the column names
+    // Set the column names
     COLUMN_1 = "email";
     COLUMN_2 = "password";
 
@@ -136,7 +136,9 @@ public boolean validateUser(UserModel userModel) {
 
     // Define the WHERE clause to find the user with the given email and password
     String selection = COLUMN_1 + " = ? AND " + COLUMN_2 + " = ?";
-    String[] selectionArgs = {COLUMN_1, COLUMN_2};
+
+    // Provide actual email and password values from the userModel to selectionArgs
+    String[] selectionArgs = {userModel.getEmail(), userModel.getPassword()};
 
     // Execute the query
     Cursor cursor = db.query(
@@ -152,11 +154,11 @@ public boolean validateUser(UserModel userModel) {
     boolean isValidUser = cursor.moveToFirst(); // Check if the cursor contains any rows
 
     cursor.close();
-    db.close();
+    // db.close(); // Note: Closing the database here might cause issues if this method is called frequently.
 
     return isValidUser;
-
 }
+
 
 //      Update method for user details
 

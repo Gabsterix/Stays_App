@@ -103,18 +103,27 @@ public class LoginActivity extends AppCompatActivity {
                     databaseHelper = new DatabaseHelper(LoginActivity.this);
 //                    Create a boolean variable to store the connection
                     boolean success = databaseHelper.validateUser(userModel);
-//                    Show a message saying login was successful
-                    Toast.makeText(LoginActivity.this, success + ": Sign-in  was successful.", Toast.LENGTH_SHORT).show();
 
-                    // Start the Signup activity
-                    Intent intent = new Intent(LoginActivity.this, HomeDashboardActivity.class);
-                    startActivity(intent);
+                    if(success==true){
+//                        Show a message saying login was successful
+                        Toast.makeText(LoginActivity.this, success + ": Login  was successful.", Toast.LENGTH_SHORT).show();
 
-                    // Close the main activity
-                    finish();
+                        // Start the Signup activity
+                        Intent intent = new Intent(LoginActivity.this, HomeDashboardActivity.class);
+                        startActivity(intent);
+
+                        // Close the main activity
+                        finish();
+
+                    }else {
+                        Toast.makeText(LoginActivity.this,"Login failed.", Toast.LENGTH_SHORT).show();
+
+                    }
+
+
                 } catch (Exception e){
 //                    False part: Show incorrect message
-                    Toast.makeText(LoginActivity.this,"Login failed.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, (CharSequence) e, Toast.LENGTH_SHORT).show();
                 }
             }
         });
