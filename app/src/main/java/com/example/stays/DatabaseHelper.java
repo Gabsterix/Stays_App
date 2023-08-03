@@ -456,7 +456,7 @@ public boolean validateUser(UserModel userModel) {
 
 //        Create the query string
         String createViewQuery = "CREATE VIEW " + VIEW_NAME + " AS "
-                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "SELECT p.prop_id, p.building_no, p.address, p.postcode, p.rate_per_night, p.mileage, p.star_rating, pi.image_id, pi.image_uri, pi.prop_id_fk "
                 + "FROM 'property' p "
                 + "LEFT JOIN 'property_image' pi "
                 + "ON p.prop_id = pi.prop_id_fk";
@@ -474,7 +474,7 @@ public boolean validateUser(UserModel userModel) {
 
 //        Create the query string
         String selectPropertyDataByTypeQuery = "CREATE VIEW " + VIEW_NAME + " AS "
-                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "SELECT p.prop_id, p.building_no, p.address, p.postcode, p.rate_per_night, p.mileage, p.star_rating, pi.image_id, pi.image_uri, pi.prop_id_fk "
                 + "FROM 'property' p "
                 + "LEFT JOIN 'property_image' pi "
                 + "ON p.prop_id = pi.prop_id_fk "
@@ -493,7 +493,7 @@ public boolean validateUser(UserModel userModel) {
 
 //        Create the query string
         String selectPropertyDataByTypeQuery = "CREATE VIEW " + VIEW_NAME + " AS "
-                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "SELECT p.prop_id, p.building_no, p.address, p.postcode, p.rate_per_night, p.mileage, p.star_rating, pi.image_id, pi.image_uri, pi.prop_id_fk "
                 + "FROM 'property' p "
                 + "LEFT JOIN 'property_image' pi "
                 + "ON p.prop_id = pi.prop_id_fk "
@@ -513,7 +513,7 @@ public boolean validateUser(UserModel userModel) {
 
 //        Create the query string
         String selectPropertyDataByTypeQuery = "CREATE VIEW " + VIEW_NAME + " AS "
-                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "SELECT p.prop_id, p.building_no, p.address, p.postcode, p.rate_per_night, p.mileage, p.star_rating, pi.image_id, pi.image_uri, pi.prop_id_fk "
                 + "FROM 'property' p "
                 + "LEFT JOIN 'property_image' pi "
                 + "ON p.prop_id = pi.prop_id_fk "
@@ -532,7 +532,7 @@ public boolean validateUser(UserModel userModel) {
 
 //        Create the query string
         String selectPropertyDataByTypeQuery = "CREATE VIEW " + VIEW_NAME + " AS "
-                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "SELECT p.prop_id, p.building_no, p.address, p.postcode, p.rate_per_night, p.mileage, p.star_rating, pi.image_id, pi.image_uri, pi.prop_id_fk "
                 + "FROM 'property' p "
                 + "LEFT JOIN 'property_image' pi "
                 + "ON p.prop_id = pi.prop_id_fk "
