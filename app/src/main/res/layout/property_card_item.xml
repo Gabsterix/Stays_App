@@ -86,14 +86,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tvDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Available Date: "
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="5dp"/>
+<!--                <TextView-->
+<!--                    android:id="@+id/tvDate"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Available Date: "-->
+<!--                    android:textSize="15dp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_marginTop="5dp"/>-->
 
             </LinearLayout>
 
