@@ -51,6 +51,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static String COLUMN_17 = "column_name";
 
+    public static String COLUMN_18 = "column_name";
+
 
 //    private SQLiteDatabase sqLiteDatabase;
 
@@ -73,6 +75,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 //        Create Reviews table
         createReviewsTable(sqLiteDatabase);
+//        Create the views (All data, Cabin, Camping Site, Beach Front and Hotel
+//        1: All Data
+        selectPropertyDataView(sqLiteDatabase);
+//        2: Cabin
+        selectPropertyDataViewBasedOnCabin(sqLiteDatabase);
+//        3: Camping Site
+        selectPropertyDataViewBasedOnCamping(sqLiteDatabase);
+//        4: Beach Front
+        selectPropertyDataViewBasedOnBeachFront(sqLiteDatabase);
+//        5: Hotel
+        selectPropertyDataViewBasedOnHotel(sqLiteDatabase);
+
+
+
+
+
 //        Create Booking table
 //        createBookingTable(sqLiteDatabase);
 
@@ -213,7 +231,8 @@ public boolean validateUser(UserModel userModel) {
         COLUMN_14 = "property_type";
         COLUMN_15 = "star_rating";
         COLUMN_16 = "rate_per_night";
-        COLUMN_17 = "description";
+        COLUMN_17 = "mileage";
+        COLUMN_18 = "description";
 
 //        PART 2: Create table structure
         String createTableQuery = "CREATE TABLE " + TABLE_NAME + " ("
@@ -234,7 +253,8 @@ public boolean validateUser(UserModel userModel) {
                 + COLUMN_14 + " TEXT, "
                 + COLUMN_15 + " REAL, "
                 + COLUMN_16 + " REAL, "
-                + COLUMN_17 + " TEXT)";
+                + COLUMN_17 + " REAL, "
+                + COLUMN_18 + " TEXT)";
 
 //        Execute the query
         sqLiteDatabase.execSQL(createTableQuery);
@@ -257,24 +277,25 @@ public boolean validateUser(UserModel userModel) {
                 + COLUMN_14 + ", "
                 + COLUMN_15 + ", "
                 + COLUMN_16 + ", "
-                + COLUMN_17 + ")"
+                + COLUMN_17 + ", "
+                + COLUMN_18 + ")"
                 + " VALUES "
-                + "('CAB000001', 'USA', 'Yellowstone', 'Cabin Retreat', '123', 'Forest Road', '12345', 'Short-Term', 'Yes', 'No', 3, 2, 2, 'Cabin', 4.5, 200.00, 'Cozy cabin in a serene forest setting.'),"
-                + "('CAB000002', 'Canada', 'Banff', 'Mountain Lodge', '456', 'Mountain View Drive', '67890', 'Short-Term', 'Yes', 'Yes', 2, 1, 1, 'Cabin', 4.8, 150.00, 'Charming cabin with stunning mountain views.'),"
-                + "('CAB000003', 'Norway', 'Lofoten Islands', 'Fjord View Cabin', '789', 'Fjord Street', '54321', 'Short-Term', 'Yes', 'Yes', 4, 3, 2, 'Cabin', 4.7, 180.00, 'Spacious cabin overlooking the breathtaking fjords.'),"
-                + "('CAB000004', 'Switzerland', 'Zermatt', 'Alpine Chalet', '321', 'Alpine Avenue', '98765', 'Short-Term', 'Yes', 'No', 1, 1, 1, 'Cabin', 3.8, 100.00, 'Compact studio cabin in the Swiss Alps.'),"
-                + "('BEACH000001', 'Maldives', 'Baa Atoll', 'Tropical Paradise Resort', '123', 'Beach Villa Road', '20000', 'Short-Term', 'Yes', 'Yes', 5, 3, 3, 'Beach Front', 4.9, 350.00, 'Luxurious beachfront villa with private pool.'),"
-                + "('BEACH000002', 'Thailand', 'Phuket', 'Sandy Beach House', '456', 'Patong Beach', '83150', 'Short-Term', 'Yes', 'Yes', 4, 2, 2, 'Beach Front', 4.6, 280.00, 'Stylish beachfront apartment with ocean view.'),"
-                + "('BEACH000003', 'Bahamas', 'Nassau', 'Seaside Getaway', '789', 'Paradise Island', '12345', 'Short-Term', 'Yes', 'Yes', 6, 4, 3, 'Beach Front', 4.8, 420.00, 'Spacious beachfront house with private beach access.'),"
-                + "('BEACH000004', 'Mexico', 'Cancun', 'Oceanfront Retreat', '321', 'Hotel Zone', '77500', 'Short-Term', 'Yes', 'Yes', 3, 2, 2, 'Beach Front', 4.3, 240.00, 'Beachfront condo with stunning sunset views.'),"
-                + "('CAMP000001', 'Canada', 'Jasper', 'Riverside Campsite', '123', 'Campground Road', 'T0E 1E0', 'Short-Term', 'Yes', 'Yes', 1, 0, 0, 'Camping Site', 3.5, 60.00, 'Scenic camping site amidst nature.'),"
-                + "('CAMP000002', 'USA', 'Yosemite', 'Mountain Campground', '456', 'Nature Trail', '95389', 'Short-Term', 'Yes', 'Yes', 2, 0, 0, 'Camping Site', 4.0, 80.00, 'Camping site with breathtaking mountain views.'),"
-                + "('CAMP000003', 'Australia', 'Great Ocean Road', 'Beachside Camping', '789', 'Beachside Camping', '3232', 'Short-Term', 'Yes', 'Yes', 3, 0, 0, 'Camping Site', 4.2, 100.00, 'Beachside camping experience by the coast.'),"
-                + "('CAMP000004', 'Sweden', 'Lapland', 'Arctic Wilderness Camp', '321', 'Arctic Circle', '98107', 'Short-Term', 'Yes', 'Yes', 1, 0, 0, 'Camping Site', 3.8, 70.00, 'Campsite under the northern lights.'),"
-                + "('HOTEL000001', 'Spain', 'Barcelona', 'Elegant City Hotel', '123', 'La Rambla', '08002', 'Short-Term', 'Yes', 'Yes', 400, 2, 2, 'Hotel', 4.7, 300.00, 'Elegant hotel in the heart of Barcelona.'),"
-                + "('HOTEL000002', 'France', 'Paris', 'Luxury Parisian Hotel', '456', 'Champs-Élysées', '75008', 'Short-Term', 'Yes', 'Yes', 155, 3, 2, 'Hotel', 4.9, 400.00, 'Luxurious hotel with stunning views of Paris.'),"
-                + "('HOTEL000003', 'Italy', 'Venice', 'Canal View Hotel', '789', 'Grand Canal', '30100', 'Short-Term', 'Yes', 'Yes', 85, 2, 2, 'Hotel', 4.5, 250.00, 'Charming hotel on the banks of the Grand Canal.'),"
-                + "('HOTEL000004', 'Japan', 'Tokyo', 'Modern City Hotel', '321', 'Shibuya', '150-0041', 'Short-Term', 'Yes', 'Yes', 120, 1, 1, 'Hotel', 4.2, 180.00, 'Modern hotel in the vibrant Shibuya district.');";
+                + "('CAB000001', 'USA', 'Yellowstone', 'Cabin Retreat', '123', 'Forest Road', '12345', 'Short-Term', 'Yes', 'No', 3, 2, 2, 'Cabin', 4.5, 200.00, 23, 'Cozy cabin in a serene forest setting.'),"
+                + "('CAB000002', 'Canada', 'Banff', 'Mountain Lodge', '456', 'Mountain View Drive', '67890', 'Short-Term', 'Yes', 'Yes', 2, 1, 1, 'Cabin', 4.8, 150.00, 43, 'Charming cabin with stunning mountain views.'),"
+                + "('CAB000003', 'Norway', 'Lofoten Islands', 'Fjord View Cabin', '789', 'Fjord Street', '54321', 'Short-Term', 'Yes', 'Yes', 4, 3, 2, 'Cabin', 4.7, 180.00, 13, 'Spacious cabin overlooking the breathtaking fjords.'),"
+                + "('CAB000004', 'Switzerland', 'Zermatt', 'Alpine Chalet', '321', 'Alpine Avenue', '98765', 'Short-Term', 'Yes', 'No', 1, 1, 1, 'Cabin', 3.8, 100.00, 9, 'Compact studio cabin in the Swiss Alps.'),"
+                + "('BEACH000001', 'Maldives', 'Baa Atoll', 'Tropical Paradise Resort', '123', 'Beach Villa Road', '20000', 'Short-Term', 'Yes', 'Yes', 5, 3, 3, 'Beach Front', 4.9, 350.00, 16, 'Luxurious beachfront villa with private pool.'),"
+                + "('BEACH000002', 'Thailand', 'Phuket', 'Sandy Beach House', '456', 'Patong Beach', '83150', 'Short-Term', 'Yes', 'Yes', 4, 2, 2, 'Beach Front', 4.6, 280.00, 8, 'Stylish beachfront apartment with ocean view.'),"
+                + "('BEACH000003', 'Bahamas', 'Nassau', 'Seaside Getaway', '789', 'Paradise Island', '12345', 'Short-Term', 'Yes', 'Yes', 6, 4, 3, 'Beach Front', 4.8, 420.00, 15, 'Spacious beachfront house with private beach access.'),"
+                + "('BEACH000004', 'Mexico', 'Cancun', 'Oceanfront Retreat', '321', 'Hotel Zone', '77500', 'Short-Term', 'Yes', 'Yes', 3, 2, 2, 'Beach Front', 4.3, 240.00, 33, 'Beachfront condo with stunning sunset views.'),"
+                + "('CAMP000001', 'Canada', 'Jasper', 'Riverside Campsite', '123', 'Campground Road', 'T0E 1E0', 'Short-Term', 'Yes', 'Yes', 1, 0, 0, 'Camping Site', 3.5, 60.00, 27, 'Scenic camping site amidst nature.'),"
+                + "('CAMP000002', 'USA', 'Yosemite', 'Mountain Campground', '456', 'Nature Trail', '95389', 'Short-Term', 'Yes', 'Yes', 2, 0, 0, 'Camping Site', 4.0, 80.00, 40, 'Camping site with breathtaking mountain views.'),"
+                + "('CAMP000003', 'Australia', 'Great Ocean Road', 'Beachside Camping', '789', 'Beachside Camping', '3232', 'Short-Term', 'Yes', 'Yes', 3, 0, 0, 'Camping Site', 4.2, 100.00, 80.9, 'Beachside camping experience by the coast.'),"
+                + "('CAMP000004', 'Sweden', 'Lapland', 'Arctic Wilderness Camp', '321', 'Arctic Circle', '98107', 'Short-Term', 'Yes', 'Yes', 1, 0, 0, 'Camping Site', 3.8, 70.00, 51, 'Campsite under the northern lights.'),"
+                + "('HOTEL000001', 'Spain', 'Barcelona', 'Elegant City Hotel', '123', 'La Rambla', '08002', 'Short-Term', 'Yes', 'Yes', 400, 2, 2, 'Hotel', 4.7, 300.00, 22, 'Elegant hotel in the heart of Barcelona.'),"
+                + "('HOTEL000002', 'France', 'Paris', 'Luxury Parisian Hotel', '456', 'Champs-Élysées', '75008', 'Short-Term', 'Yes', 'Yes', 155, 3, 2, 'Hotel', 4.9, 400.00, 17, 'Luxurious hotel with stunning views of Paris.'),"
+                + "('HOTEL000003', 'Italy', 'Venice', 'Canal View Hotel', '789', 'Grand Canal', '30100', 'Short-Term', 'Yes', 'Yes', 85, 2, 2, 'Hotel', 4.5, 250.00, 7.5, 'Charming hotel on the banks of the Grand Canal.'),"
+                + "('HOTEL000004', 'Japan', 'Tokyo', 'Modern City Hotel', '321', 'Shibuya', '150-0041', 'Short-Term', 'Yes', 'Yes', 120, 1, 1, 'Hotel', 4.2, 180.00, 2.6, 'Modern hotel in the vibrant Shibuya district.');";
 
 //        Execute the insert statement query
         sqLiteDatabase.execSQL(insertDefaultData);
@@ -427,6 +448,100 @@ public boolean validateUser(UserModel userModel) {
 
     }
 //    ================ End of Property Reviews Table =============
+
+//    Create a Views for getting the data
+    private void selectPropertyDataView(SQLiteDatabase sqLiteDatabase){
+
+        String VIEW_NAME = "property_property_image_view";
+
+//        Create the query string
+        String createViewQuery = "CREATE VIEW " + VIEW_NAME + " AS "
+                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "FROM 'property' p "
+                + "LEFT JOIN 'property_image' pi "
+                + "ON p.prop_id = pi.prop_id_fk";
+
+//        Execute the query
+        sqLiteDatabase.execSQL(createViewQuery);
+
+    }
+
+    private void selectPropertyDataViewBasedOnCabin(SQLiteDatabase sqLiteDatabase){
+
+//        Create the view name
+        String VIEW_NAME = "property_property_image_by_cabin_view";
+        String SEARCH_PARAM = "Cabin";
+
+//        Create the query string
+        String selectPropertyDataByTypeQuery = "CREATE VIEW " + VIEW_NAME + " AS "
+                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "FROM 'property' p "
+                + "LEFT JOIN 'property_image' pi "
+                + "ON p.prop_id = pi.prop_id_fk "
+                + "WHERE p.property_type = "
+                + "'" + SEARCH_PARAM + "';";
+//        Execute the query
+        sqLiteDatabase.execSQL(selectPropertyDataByTypeQuery);
+
+    }
+
+    private void selectPropertyDataViewBasedOnCamping(SQLiteDatabase sqLiteDatabase){
+
+//        Create the view name
+        String VIEW_NAME = "property_property_image_by_camping_view";
+        String SEARCH_PARAM = "Camping Site";
+
+//        Create the query string
+        String selectPropertyDataByTypeQuery = "CREATE VIEW " + VIEW_NAME + " AS "
+                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "FROM 'property' p "
+                + "LEFT JOIN 'property_image' pi "
+                + "ON p.prop_id = pi.prop_id_fk "
+                + "WHERE p.property_type = "
+                + "'" + SEARCH_PARAM + "';";
+//        Execute the query
+        sqLiteDatabase.execSQL(selectPropertyDataByTypeQuery);
+
+    }
+
+
+    private void selectPropertyDataViewBasedOnHotel(SQLiteDatabase sqLiteDatabase){
+
+//        Create the view name
+        String VIEW_NAME = "property_property_image_by_hotel_view";
+        String SEARCH_PARAM = "Hotel";
+
+//        Create the query string
+        String selectPropertyDataByTypeQuery = "CREATE VIEW " + VIEW_NAME + " AS "
+                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "FROM 'property' p "
+                + "LEFT JOIN 'property_image' pi "
+                + "ON p.prop_id = pi.prop_id_fk "
+                + "WHERE p.property_type = "
+                + "'" + SEARCH_PARAM + "';";
+//        Execute the query
+        sqLiteDatabase.execSQL(selectPropertyDataByTypeQuery);
+
+    }
+
+    private void selectPropertyDataViewBasedOnBeachFront(SQLiteDatabase sqLiteDatabase){
+
+//        Create the view name
+        String VIEW_NAME = "property_property_image_by_beach_view";
+        String SEARCH_PARAM = "Beach Front";
+
+//        Create the query string
+        String selectPropertyDataByTypeQuery = "CREATE VIEW " + VIEW_NAME + " AS "
+                + "SELECT p.*, pi.image_id, pi.image_uri "
+                + "FROM 'property' p "
+                + "LEFT JOIN 'property_image' pi "
+                + "ON p.prop_id = pi.prop_id_fk "
+                + "WHERE p.property_type = "
+                + "'" + SEARCH_PARAM + "';";
+//        Execute the query
+        sqLiteDatabase.execSQL(selectPropertyDataByTypeQuery);
+
+    }
 
 
 

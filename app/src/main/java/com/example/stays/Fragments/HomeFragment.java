@@ -75,8 +75,5 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
 
 
-        // Return the view object
-//        return rootView;
-
     }
 }
