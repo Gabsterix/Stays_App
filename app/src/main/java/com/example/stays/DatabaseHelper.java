@@ -183,6 +183,56 @@ public boolean validateUser(UserModel userModel) {
 
 
 //      Update method for user details
+    public boolean updateUserDetails(Integer user_id, String firstname, String lastname, String mobile, String email, String password, String avatar_uri){
+
+
+//        Create the sqlite connection object
+        SQLiteDatabase db = this.getWritableDatabase();
+
+//        Set the table name
+        TABLE_NAME = "user";
+
+//        Set the column name
+        DatabaseHelper.COLUMN_ID = "user_id";
+        DatabaseHelper.COLUMN_1 = "firstname";
+        DatabaseHelper.COLUMN_2 = "lastname";
+        DatabaseHelper.COLUMN_3 = "email";
+        DatabaseHelper.COLUMN_4 = "mobile";
+        DatabaseHelper.COLUMN_5 = "password";
+        DatabaseHelper.COLUMN_6 = "avatar_uri";
+
+//        Create the content values object
+        ContentValues contentValues = new ContentValues();
+
+//        Pass the data to the content values object
+        contentValues.put(COLUMN_1, firstname);
+        contentValues.put(COLUMN_2, lastname);
+        contentValues.put(COLUMN_3, email);
+        contentValues.put(COLUMN_4, mobile);
+        contentValues.put(COLUMN_5, password);
+        contentValues.put(COLUMN_6, avatar_uri);
+//        Execute the update statement
+        int rowsAffected = db.update(TABLE_NAME, contentValues, COLUMN_ID + " = ?", new String[]{String.valueOf(user_id)});
+
+//        Return
+        return rowsAffected > 0;
+    }
+
+//    Method for deleting the user record
+    public boolean deleteUserDetails(Integer user_id){
+
+//        Create the sqlite connection object
+        SQLiteDatabase db = this.getWritableDatabase();
+
+//        Set the table name
+        TABLE_NAME = "user";
+//        Set the column name
+        DatabaseHelper.COLUMN_ID = "user_id";
+//        Create and Execute the delete statement
+        int rowsAffected = db.delete(TABLE_NAME, COLUMN_ID + " = ?", new String[]{String.valueOf(user_id)});
+//        Return the number of row(s) affected
+        return rowsAffected > 0;
+    }
 
 
     private void createUserTable(SQLiteDatabase sqLiteDatabase){
