@@ -41,14 +41,19 @@
 <!--            -->
 <!--        </androidx.cardview.widget.CardView>-->
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewCards"
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/recyclerViewCards"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:layout_marginBottom="6dp" />-->
+
+        <ListView
+            android:id="@+id/lv_PropertyCardList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="6dp" />
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
