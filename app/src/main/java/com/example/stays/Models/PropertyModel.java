@@ -1,4 +1,4 @@
-package com.example.stays;
+package com.example.stays.Models;
 
 import java.util.List;
 
@@ -22,16 +22,16 @@ public class PropertyModel {
     private Integer star_rating;
     private Float rate_per_night;
     private Float mileage;
-    private List<String> image_urls;
+    private String image_uri;
     private String description;
 
 //    Base constructor
-
     public PropertyModel() {
     }
 
-//    Constructor to select all record
-    public PropertyModel(String prop_code, String country, String location, String building_no, String address, String postcode, String rental_type, String child_friendly, String disability_friendly, Integer no_of_rooms, Integer no_of_bathrooms, Integer no_of_toilets, String property_type, Integer star_rating, Float rate_per_night, Float mileage, List<String> image_urls, String description) {
+//    Constructor for inserting a record in the database supplying all data fields
+
+    public PropertyModel(String prop_code, String country, String location, String building_no, String address, String postcode, String rental_type, String child_friendly, String disability_friendly, Integer no_of_rooms, Integer no_of_bathrooms, Integer no_of_toilets, String property_type, Integer star_rating, Float rate_per_night, Float mileage, String image_uri, String description) {
         this.prop_code = prop_code;
         this.country = country;
         this.location = location;
@@ -48,35 +48,9 @@ public class PropertyModel {
         this.star_rating = star_rating;
         this.rate_per_night = rate_per_night;
         this.mileage = mileage;
-        this.image_urls = image_urls;
+        this.image_uri = image_uri;
         this.description = description;
     }
-
-
-//    Constructor show all data with id field records
-
-    public PropertyModel(String prop_id, String prop_code, String country, String location, String building_no, String address, String postcode, String rental_type, String child_friendly, String disability_friendly, Integer no_of_rooms, Integer no_of_bathrooms, Integer no_of_toilets, String property_type, Integer star_rating, Float rate_per_night, Float mileage, List<String> image_urls, String description) {
-        this.prop_id = prop_id;
-        this.prop_code = prop_code;
-        this.country = country;
-        this.location = location;
-        this.building_no = building_no;
-        this.address = address;
-        this.postcode = postcode;
-        this.rental_type = rental_type;
-        this.child_friendly = child_friendly;
-        this.disability_friendly = disability_friendly;
-        this.no_of_rooms = no_of_rooms;
-        this.no_of_bathrooms = no_of_bathrooms;
-        this.no_of_toilets = no_of_toilets;
-        this.property_type = property_type;
-        this.star_rating = star_rating;
-        this.rate_per_night = rate_per_night;
-        this.mileage = mileage;
-        this.image_urls = image_urls;
-        this.description = description;
-    }
-
 
 //    Getters and setters
 
@@ -217,12 +191,12 @@ public class PropertyModel {
         this.mileage = mileage;
     }
 
-    public List<String> getImage_urls() {
-        return image_urls;
+    public String getImage_uri() {
+        return image_uri;
     }
 
-    public void setImage_urls(List<String> image_urls) {
-        this.image_urls = image_urls;
+    public void setImage_uri(String image_uri) {
+        this.image_uri = image_uri;
     }
 
     public String getDescription() {
@@ -233,7 +207,7 @@ public class PropertyModel {
         this.description = description;
     }
 
-//    ToString Method
+//    To string method for displaying through the curser
 
 
     @Override
@@ -256,7 +230,7 @@ public class PropertyModel {
                 ", star_rating=" + star_rating +
                 ", rate_per_night=" + rate_per_night +
                 ", mileage=" + mileage +
-                ", image_urls=" + image_urls +
+                ", image_uri='" + image_uri + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }

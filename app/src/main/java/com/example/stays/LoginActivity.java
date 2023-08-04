@@ -3,8 +3,6 @@ package com.example.stays;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.RestrictionEntry;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -13,6 +11,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.stays.Models.UserModel;
 
 public class LoginActivity extends AppCompatActivity {
 

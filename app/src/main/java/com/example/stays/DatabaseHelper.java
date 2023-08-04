@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.stays.Models.UserModel;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 //    Create variables to hold the database name, table and column names
@@ -52,6 +54,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static String COLUMN_17 = "column_name";
 
     public static String COLUMN_18 = "column_name";
+
+    public static String COLUMN_19 = "column_name";
 
 
 //    private SQLiteDatabase sqLiteDatabase;
@@ -232,7 +236,8 @@ public boolean validateUser(UserModel userModel) {
         COLUMN_15 = "star_rating";
         COLUMN_16 = "rate_per_night";
         COLUMN_17 = "mileage";
-        COLUMN_18 = "description";
+        COLUMN_18 = "image_uri";
+        COLUMN_19 = "description";
 
 //        PART 2: Create table structure
         String createTableQuery = "CREATE TABLE " + TABLE_NAME + " ("
@@ -254,7 +259,8 @@ public boolean validateUser(UserModel userModel) {
                 + COLUMN_15 + " REAL, "
                 + COLUMN_16 + " REAL, "
                 + COLUMN_17 + " REAL, "
-                + COLUMN_18 + " TEXT)";
+                + COLUMN_18 + " TEXT, "
+                + COLUMN_19 + " TEXT)";
 
 //        Execute the query
         sqLiteDatabase.execSQL(createTableQuery);
@@ -278,24 +284,25 @@ public boolean validateUser(UserModel userModel) {
                 + COLUMN_15 + ", "
                 + COLUMN_16 + ", "
                 + COLUMN_17 + ", "
-                + COLUMN_18 + ")"
+                + COLUMN_18 + ", "
+                + COLUMN_19 + ")"
                 + " VALUES "
-                + "('CAB000001', 'USA', 'Yellowstone', 'Cabin Retreat', '123', 'Forest Road', '12345', 'Short-Term', 'Yes', 'No', 3, 2, 2, 'Cabin', 4.5, 200.00, 23, 'Cozy cabin in a serene forest setting.'),"
-                + "('CAB000002', 'Canada', 'Banff', 'Mountain Lodge', '456', 'Mountain View Drive', '67890', 'Short-Term', 'Yes', 'Yes', 2, 1, 1, 'Cabin', 4.8, 150.00, 43, 'Charming cabin with stunning mountain views.'),"
-                + "('CAB000003', 'Norway', 'Lofoten Islands', 'Fjord View Cabin', '789', 'Fjord Street', '54321', 'Short-Term', 'Yes', 'Yes', 4, 3, 2, 'Cabin', 4.7, 180.00, 13, 'Spacious cabin overlooking the breathtaking fjords.'),"
-                + "('CAB000004', 'Switzerland', 'Zermatt', 'Alpine Chalet', '321', 'Alpine Avenue', '98765', 'Short-Term', 'Yes', 'No', 1, 1, 1, 'Cabin', 3.8, 100.00, 9, 'Compact studio cabin in the Swiss Alps.'),"
-                + "('BEACH000001', 'Maldives', 'Baa Atoll', 'Tropical Paradise Resort', '123', 'Beach Villa Road', '20000', 'Short-Term', 'Yes', 'Yes', 5, 3, 3, 'Beach Front', 4.9, 350.00, 16, 'Luxurious beachfront villa with private pool.'),"
-                + "('BEACH000002', 'Thailand', 'Phuket', 'Sandy Beach House', '456', 'Patong Beach', '83150', 'Short-Term', 'Yes', 'Yes', 4, 2, 2, 'Beach Front', 4.6, 280.00, 8, 'Stylish beachfront apartment with ocean view.'),"
-                + "('BEACH000003', 'Bahamas', 'Nassau', 'Seaside Getaway', '789', 'Paradise Island', '12345', 'Short-Term', 'Yes', 'Yes', 6, 4, 3, 'Beach Front', 4.8, 420.00, 15, 'Spacious beachfront house with private beach access.'),"
-                + "('BEACH000004', 'Mexico', 'Cancun', 'Oceanfront Retreat', '321', 'Hotel Zone', '77500', 'Short-Term', 'Yes', 'Yes', 3, 2, 2, 'Beach Front', 4.3, 240.00, 33, 'Beachfront condo with stunning sunset views.'),"
-                + "('CAMP000001', 'Canada', 'Jasper', 'Riverside Campsite', '123', 'Campground Road', 'T0E 1E0', 'Short-Term', 'Yes', 'Yes', 1, 0, 0, 'Camping Site', 3.5, 60.00, 27, 'Scenic camping site amidst nature.'),"
-                + "('CAMP000002', 'USA', 'Yosemite', 'Mountain Campground', '456', 'Nature Trail', '95389', 'Short-Term', 'Yes', 'Yes', 2, 0, 0, 'Camping Site', 4.0, 80.00, 40, 'Camping site with breathtaking mountain views.'),"
-                + "('CAMP000003', 'Australia', 'Great Ocean Road', 'Beachside Camping', '789', 'Beachside Camping', '3232', 'Short-Term', 'Yes', 'Yes', 3, 0, 0, 'Camping Site', 4.2, 100.00, 80.9, 'Beachside camping experience by the coast.'),"
-                + "('CAMP000004', 'Sweden', 'Lapland', 'Arctic Wilderness Camp', '321', 'Arctic Circle', '98107', 'Short-Term', 'Yes', 'Yes', 1, 0, 0, 'Camping Site', 3.8, 70.00, 51, 'Campsite under the northern lights.'),"
-                + "('HOTEL000001', 'Spain', 'Barcelona', 'Elegant City Hotel', '123', 'La Rambla', '08002', 'Short-Term', 'Yes', 'Yes', 400, 2, 2, 'Hotel', 4.7, 300.00, 22, 'Elegant hotel in the heart of Barcelona.'),"
-                + "('HOTEL000002', 'France', 'Paris', 'Luxury Parisian Hotel', '456', 'Champs-Élysées', '75008', 'Short-Term', 'Yes', 'Yes', 155, 3, 2, 'Hotel', 4.9, 400.00, 17, 'Luxurious hotel with stunning views of Paris.'),"
-                + "('HOTEL000003', 'Italy', 'Venice', 'Canal View Hotel', '789', 'Grand Canal', '30100', 'Short-Term', 'Yes', 'Yes', 85, 2, 2, 'Hotel', 4.5, 250.00, 7.5, 'Charming hotel on the banks of the Grand Canal.'),"
-                + "('HOTEL000004', 'Japan', 'Tokyo', 'Modern City Hotel', '321', 'Shibuya', '150-0041', 'Short-Term', 'Yes', 'Yes', 120, 1, 1, 'Hotel', 4.2, 180.00, 2.6, 'Modern hotel in the vibrant Shibuya district.');";
+                + "('CAB000001', 'USA', 'Yellowstone', 'Cabin Retreat', '123', 'Forest Road', '12345', 'Short-Term', 'Yes', 'No', 3, 2, 2, 'Cabin', 4.5, 200.00, 23, 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 'Cozy cabin in a serene forest setting.'),"
+                + "('CAB000002', 'Canada', 'Banff', 'Mountain Lodge', '456', 'Mountain View Drive', '67890', 'Short-Term', 'Yes', 'Yes', 2, 1, 1, 'Cabin', 4.8, 150.00, 43, 'https://drive.google.com/file/d/1hT_m7nKMXLPxSjclCBJsi91ubWjNFs4t/view?usp=drive_link', 'Charming cabin with stunning mountain views.'),"
+                + "('CAB000003', 'Norway', 'Lofoten Islands', 'Fjord View Cabin', '789', 'Fjord Street', '54321', 'Short-Term', 'Yes', 'Yes', 4, 3, 2, 'Cabin', 4.7, 180.00, 13, 'https://drive.google.com/file/d/1p60ZZXTHpTyB4UoKqCV7TpRqGyVWZGkR/view?usp=drive_link', 'Spacious cabin overlooking the breathtaking fjords.'),"
+                + "('CAB000004', 'Switzerland', 'Zermatt', 'Alpine Chalet', '321', 'Alpine Avenue', '98765', 'Short-Term', 'Yes', 'No', 1, 1, 1, 'Cabin', 3.8, 100.00, 9, 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 'Compact studio cabin in the Swiss Alps.'),"
+                + "('BEACH000001', 'Maldives', 'Baa Atoll', 'Tropical Paradise Resort', '123', 'Beach Villa Road', '20000', 'Short-Term', 'Yes', 'Yes', 5, 3, 3, 'Beach Front', 4.9, 350.00, 16, 'https://drive.google.com/file/d/1bm2snorxQ4LxeR6UhZRC2yC0-URC5MmP/view?usp=drive_link', 'Luxurious beachfront villa with private pool.'),"
+                + "('BEACH000002', 'Thailand', 'Phuket', 'Sandy Beach House', '456', 'Patong Beach', '83150', 'Short-Term', 'Yes', 'Yes', 4, 2, 2, 'Beach Front', 4.6, 280.00, 8, 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 'Stylish beachfront apartment with ocean view.'),"
+                + "('BEACH000003', 'Bahamas', 'Nassau', 'Seaside Getaway', '789', 'Paradise Island', '12345', 'Short-Term', 'Yes', 'Yes', 6, 4, 3, 'Beach Front', 4.8, 420.00, 15, 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 'Spacious beachfront house with private beach access.'),"
+                + "('BEACH000004', 'Mexico', 'Cancun', 'Oceanfront Retreat', '321', 'Hotel Zone', '77500', 'Short-Term', 'Yes', 'Yes', 3, 2, 2, 'Beach Front', 4.3, 240.00, 33, 'https://drive.google.com/file/d/1tHdCLNacPmlCMjqvDipJOR5dZmP6aIvM/view?usp=drive_link', 'Beachfront condo with stunning sunset views.'),"
+                + "('CAMP000001', 'Canada', 'Jasper', 'Riverside Campsite', '123', 'Campground Road', 'T0E 1E0', 'Short-Term', 'Yes', 'Yes', 1, 0, 0, 'Camping Site', 3.5, 60.00, 27, 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 'Scenic camping site amidst nature.'),"
+                + "('CAMP000002', 'USA', 'Yosemite', 'Mountain Campground', '456', 'Nature Trail', '95389', 'Short-Term', 'Yes', 'Yes', 2, 0, 0, 'Camping Site', 4.0, 80.00, 40, 'https://drive.google.com/file/d/1pmarhD_2-oj9nOzjF409JjXW9RppUKL7/view?usp=drive_link', 'Camping site with breathtaking mountain views.'),"
+                + "('CAMP000003', 'Australia', 'Great Ocean Road', 'Beachside Camping', '789', 'Beachside Camping', '3232', 'Short-Term', 'Yes', 'Yes', 3, 0, 0, 'Camping Site', 4.2, 100.00, 80.9, 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 'Beachside camping experience by the coast.'),"
+                + "('CAMP000004', 'Sweden', 'Lapland', 'Arctic Wilderness Camp', '321', 'Arctic Circle', '98107', 'Short-Term', 'Yes', 'Yes', 1, 0, 0, 'Camping Site', 3.8, 70.00, 51, 'https://drive.google.com/file/d/16TOHITqB2jkFVAvfEvCnfIZKAnAN9EED/view?usp=drive_link', 'Campsite under the northern lights.'),"
+                + "('HOTEL000001', 'Spain', 'Barcelona', 'Elegant City Hotel', '123', 'La Rambla', '08002', 'Short-Term', 'Yes', 'Yes', 400, 2, 2, 'Hotel', 4.7, 300.00, 22, 'https://drive.google.com/file/d/1JTwmIRA9wTGZ0_qzJoX82KbqVagu8_6-/view?usp=drive_link', 'Elegant hotel in the heart of Barcelona.'),"
+                + "('HOTEL000002', 'France', 'Paris', 'Luxury Parisian Hotel', '456', 'Champs-Élysées', '75008', 'Short-Term', 'Yes', 'Yes', 155, 3, 2, 'Hotel', 4.9, 400.00, 17, 'https://drive.google.com/file/d/1Q-mjZU5ddzcU75gmbnKGMSPz0iK_3AuR/view?usp=drive_link', 'Luxurious hotel with stunning views of Paris.'),"
+                + "('HOTEL000003', 'Italy', 'Venice', 'Canal View Hotel', '789', 'Grand Canal', '30100', 'Short-Term', 'Yes', 'Yes', 85, 2, 2, 'Hotel', 4.5, 250.00, 7.5, 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 'Charming hotel on the banks of the Grand Canal.'),"
+                + "('HOTEL000004', 'Japan', 'Tokyo', 'Modern City Hotel', '321', 'Shibuya', '150-0041', 'Short-Term', 'Yes', 'Yes', 120, 1, 1, 'Hotel', 4.2, 180.00, 2.6, 'https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link', 'Modern hotel in the vibrant Shibuya district.');";
 
 //        Execute the insert statement query
         sqLiteDatabase.execSQL(insertDefaultData);
@@ -404,7 +411,7 @@ public boolean validateUser(UserModel userModel) {
     private void createReviewsTable(SQLiteDatabase sqLiteDatabase){
 
 //        PART 1: Set the table and column names
-        TABLE_NAME = "review";
+        TABLE_NAME = "customer_review";
         COLUMN_ID = "review_id";
         COLUMN_1 = "description";
         COLUMN_2 = "rating";

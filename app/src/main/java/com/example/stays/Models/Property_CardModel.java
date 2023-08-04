@@ -1,4 +1,4 @@
-package com.example.stays;
+package com.example.stays.Models;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class Property_CardModel {
     public Property_CardModel() {
     }
 
-//   Constructor for all data required for the card
+//   Constructors for all data required for the card
 
     public Property_CardModel(Integer prop_id, String building_no, String address, String postcode, String property_type, String star_rating, Float rate, Float mileage, List<String> property_image, Integer prop_id_fk) {
         this.prop_id = prop_id;
@@ -34,6 +34,8 @@ public class Property_CardModel {
         this.property_image = property_image;
         this.prop_id_fk = prop_id_fk;
     }
+
+
 
 
 //    Getters and Setters

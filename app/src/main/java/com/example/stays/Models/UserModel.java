@@ -1,4 +1,4 @@
-package com.example.stays;
+package com.example.stays.Models;
 
 public class UserModel {
 
