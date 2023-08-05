@@ -39,4 +39,10 @@ dependencies {
 
 //    Card view
     implementation "androidx.cardview:cardview:1.0.0"
+
+//    Circle Image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+//    Glide image
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
 }

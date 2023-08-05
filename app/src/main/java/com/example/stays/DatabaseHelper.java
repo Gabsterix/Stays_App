@@ -504,6 +504,13 @@ public boolean validateUser(UserModel userModel) {
         sqLiteDatabase.execSQL(insertDefaultData);
 
     }
+
+
+//    ========== Sub Utils customer reviews ===========
+
+
+//    =================================================
+
 //    ================ End of Property Reviews Table =============
 
 //    Create a Views for getting the data
