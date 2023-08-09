@@ -5,7 +5,7 @@ import java.util.List;
 public class PropertyModel {
 
     //        Set the column names
-    private String prop_id;
+    private Integer prop_id;
     private String prop_code;
     private String country;
     private String location;
@@ -19,7 +19,7 @@ public class PropertyModel {
     private Integer no_of_bathrooms;
     private Integer no_of_toilets;
     private String property_type;
-    private Integer star_rating;
+    private Float star_rating;
     private Float rate_per_night;
     private Float mileage;
     private String image_uri;
@@ -31,7 +31,8 @@ public class PropertyModel {
 
 //    Constructor for inserting a record in the database supplying all data fields
 
-    public PropertyModel(String prop_code, String country, String location, String building_no, String address, String postcode, String rental_type, String child_friendly, String disability_friendly, Integer no_of_rooms, Integer no_of_bathrooms, Integer no_of_toilets, String property_type, Integer star_rating, Float rate_per_night, Float mileage, String image_uri, String description) {
+
+    public PropertyModel(String prop_code, String country, String location, String building_no, String address, String postcode, String rental_type, String child_friendly, String disability_friendly, Integer no_of_rooms, Integer no_of_bathrooms, Integer no_of_toilets, String property_type, Float star_rating, Float rate_per_night, Float mileage, String image_uri, String description) {
         this.prop_code = prop_code;
         this.country = country;
         this.location = location;
@@ -52,14 +53,23 @@ public class PropertyModel {
         this.description = description;
     }
 
-//    Getters and setters
+    public PropertyModel(Integer prop_id, String building_no, String address, Float star_rating, Float rate_per_night, Float mileage, String image_uri) {
+        this.prop_id = prop_id;
+        this.building_no = building_no;
+        this.address = address;
+        this.star_rating = star_rating;
+        this.rate_per_night = rate_per_night;
+        this.mileage = mileage;
+        this.image_uri = image_uri;
+    }
 
+    //    Getters and setters
 
-    public String getProp_id() {
+    public Integer getProp_id() {
         return prop_id;
     }
 
-    public void setProp_id(String prop_id) {
+    public void setProp_id(Integer prop_id) {
         this.prop_id = prop_id;
     }
 
@@ -167,11 +177,11 @@ public class PropertyModel {
         this.property_type = property_type;
     }
 
-    public Integer getStar_rating() {
+    public Float getStar_rating() {
         return star_rating;
     }
 
-    public void setStar_rating(Integer star_rating) {
+    public void setStar_rating(Float star_rating) {
         this.star_rating = star_rating;
     }
 
@@ -207,13 +217,13 @@ public class PropertyModel {
         this.description = description;
     }
 
-//    To string method for displaying through the curser
 
+//    To string method for displaying through the cursor
 
     @Override
     public String toString() {
         return "PropertyModel{" +
-                "prop_id='" + prop_id + '\'' +
+                "prop_id=" + prop_id +
                 ", prop_code='" + prop_code + '\'' +
                 ", country='" + country + '\'' +
                 ", location='" + location + '\'' +

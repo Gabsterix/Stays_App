@@ -22,10 +22,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
@@ -45,4 +51,15 @@ dependencies {
 
 //    Glide image
     implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+//    implementation 'com.github.bumptech.glide:glide:4.12.0' // Use the latest version
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+//        implementation 'com.github.bumptech.glide:glide:4.13.0' // Use the latest version
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+
+
+//    Picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
+
 }

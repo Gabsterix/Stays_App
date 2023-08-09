@@ -5,4 +5,5 @@
     <color name="primary_yellow">#FFD831</color>
     <color name="secondary_yellow">#F1C40F</color>
     <color name="primary_gray">#D9D9D9</color>
+    <color name="grey">#808080</color>
 </resources>

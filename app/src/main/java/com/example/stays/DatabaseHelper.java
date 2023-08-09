@@ -8,7 +8,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.stays.Models.PropertyModel;
 import com.example.stays.Models.UserModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -217,6 +221,8 @@ public boolean validateUser(UserModel userModel) {
 //        Return
         return rowsAffected > 0;
     }
+
+
 
 //    Method for deleting the user record
     public boolean deleteUserDetails(Integer user_id){
@@ -454,9 +460,68 @@ public boolean validateUser(UserModel userModel) {
 
     }
 
+//    ====== Sub Utils ============
+//    1: Get all records from the property table
+
+    public Cursor getData()
+    {
+        TABLE_NAME = "property";
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT building_no, address, star_rating, rate_per_night, mileage, image_uri FROM " + TABLE_NAME, null);
+
+        return cursor;
+    }
+//    public List<PropertyModel> selectAllProperties(){
+//
+//        List<PropertyModel> returnList = new ArrayList<>();
+//
+////        Get the data from the database
+//        TABLE_NAME = "property";
+//        String queryString = "SELECT prop_id, building_no, address, star_rating, rate_per_night, mileage, image_uri FROM " + TABLE_NAME;
+//
+//        SQLiteDatabase db = this.getReadableDatabase();
+//
+//        Cursor cursor = db.rawQuery(queryString,null, null);
+//
+//        if(cursor.moveToFirst()){
+////            Loop through the result set and create individual property items
+//            do {
+//                int prop_id = cursor.getInt(0);
+//                String buildingNo = cursor.getString(5);
+//                String addressLine = cursor.getString(6);
+//                float rating = cursor.getFloat(15);
+//                float price = cursor.getFloat(16);
+//                float mileage = cursor.getFloat(17);
+//                String imageURL = cursor.getString(18);
+//
+////                Create a new property  object
+//                PropertyModel newProperty = new PropertyModel(prop_id, buildingNo, addressLine, rating, price, mileage, imageURL);
+//
+////                Place the new customer into the return list object
+//                returnList.add(newProperty);
+//
+//
+//            }while (cursor.moveToNext());
+//
+//        }else {
+////            Failure: do not add anything to the to the list
+//
+//        }
+////        Close the cursor
+//        cursor.close();
+////        Close the database
+//        db.close();
+////        Return the list object
+//        return returnList;
+//    }
+
+//    ====== End Sub Utils ========
+
 //    ===================== End of Property Image Table =============================
 
-//    ================= Property Reviews =========================
+//    ================= Customer Reviews =========================
 
     private void createReviewsTable(SQLiteDatabase sqLiteDatabase){
 
