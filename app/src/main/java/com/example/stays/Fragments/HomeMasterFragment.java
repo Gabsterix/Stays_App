@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.stays.Models.Property;
 import com.example.stays.Models.PropertyData;
+import com.example.stays.Models.PropertyDataModel;
 import com.example.stays.PropertyDataAdapter;
 import com.example.stays.R;
 
@@ -25,7 +26,7 @@ public class HomeMasterFragment extends Fragment {
 //    List<Property> propertyList = new ArrayList<>();
 
     LinearLayoutManager layoutManager;
-    ArrayList<Property> propertyArrayList;
+    ArrayList<PropertyDataModel> propertyArrayList;
     PropertyDataAdapter propertyAdapter;
 
     @Override
