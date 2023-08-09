@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 // Close the main activity
                 finish();
             }
-        }, 4000);
+        }, 2000);
 
 
     }

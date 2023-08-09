@@ -1,0 +1,95 @@
+CREATE TABLE cabin(
+  cabin_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  country TEXT,
+  location TEXT,
+  house_no TEXT,
+  address_line TEXT,
+  postcode TEXT,
+  number_of_rooms TEXT NOT NULL,
+  number_of_bathrooms TEXT NOT NULL,
+  number_of_toilets TEXT NOT NULL,
+  child_friendly TEXT NOT NULL DEFAULT No,
+  rental_type TEXT NOT NULL DEFAULT Short-term,
+  disability_friendly TEXT NOT NULL DEFAULT Yes,
+  multi_share TEXT NOT NULL DEFAULT No,
+  rate REAL NOT NULL DEFAULT 00.00,
+  description TEXT
+);
+
+INSERT INTO cabin (country, location, house_no, address_line, postcode, number_of_rooms, number_of_bathrooms, number_of_toilets, child_friendly, rental_type, disability_friendly, multi_share, rate, description)
+VALUES
+  ('USA', 'Yellowstone National Park', '123', 'Forest Road', '12345', '3', '2', '2', 'No', 'Short-term', 'Yes', 'No', 250.00, 'Cozy cabin in a serene forest setting.'),
+  ('Canada', 'Banff National Park', '456', 'Mountain View Drive', '67890', '2', '1', '1', 'Yes', 'Short-term', 'Yes', 'No', 180.00, 'Charming cabin with stunning mountain views.'),
+  ('Norway', 'Lofoten Islands', '789', 'Fjord Street', '54321', '4', '3', '2', 'Yes', 'Long-term', 'Yes', 'Yes', 300.00, 'Spacious cabin overlooking the breathtaking fjords.'),
+  ('Switzerland', 'Zermatt', '321', 'Alpine Avenue', '98765', '5', '4', '3', 'Yes', 'Short-term', 'No', 'Yes', 400.00, 'Luxurious cabin in the heart of the Swiss Alps.');
+
+
+  CREATE TABLE cabin_image(
+  cabin_image_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  image BLOB,
+  image_uri TEXT NOT NULL,
+  cabin_cabin_id INTEGER NOT NULL,
+  CONSTRAINT cabin_cabin_image
+    FOREIGN KEY (cabin_cabin_id) REFERENCES cabin (cabin_id)
+);
+
+
+INSERT INTO cabin_image (image, image_uri, cabin_cabin_id)
+VALUES
+  (null, 'https://drive.google.com/file/d/1eI9Af5JJD9_-p-AtfiKUx41TbBd7Ho88/view?usp=drive_link', 3),
+  (null, 'https://drive.google.com/file/d/1p60ZZXTHpTyB4UoKqCV7TpRqGyVWZGkR/view?usp=drive_link', 3),
+  (null, 'https://drive.google.com/file/d/18VukwNzyyR-kFIiJqsZEHIUk8oVsGu3x/view?usp=drive_link', 3),
+  (null, 'https://drive.google.com/file/d/1Du8OOkiHKFG7k6JQQLDd-wdKDhoBNko-/view?usp=drive_link', 3),
+  (null, 'https://drive.google.com/file/d/1WdIUtbSTE0c8S5ivqvZQOXP35OKjoGHW/view?usp=drive_link', 2),
+  (null, 'https://drive.google.com/file/d/1OIKKi7Knc3Y_YkUaC2Zd8PU5BrqGHGdA/view?usp=drive_link', 2),
+  (null, 'https://drive.google.com/file/d/1hT_m7nKMXLPxSjclCBJsi91ubWjNFs4t/view?usp=drive_link', 2),
+  (null, 'https://drive.google.com/file/d/1dsbMUJTFuV4TRcTNCDNfZnZDCA0NPANy/view?usp=drive_link', 2);
+
+  CREATE TABLE camp_image(
+  camp_image_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  image BLOB,
+  image_uri TEXT NOT NULL,
+  camping_camp_id INTEGER NOT NULL,
+  CONSTRAINT camping_camp_image
+    FOREIGN KEY (camping_camp_id) REFERENCES camping (camp_id)
+);
+
+
+INSERT INTO camp_image (image, image_uri, apartment_apartment_id)
+VALUES
+  (null, 'https://example.com/apartment1.jpg', 1),
+  (null, 'https://example.com/apartment2.jpg', 2),
+  (null, 'https://example.com/apartment3.jpg', 3),
+  (null, 'https://example.com/apartment4.jpg', 4);
+
+
+
+  INSERT INTO beach_image (image, image_uri, beach_beach_house_id)
+VALUES
+  (null, 'https://drive.google.com/file/d/1bm2snorxQ4LxeR6UhZRC2yC0-URC5MmP/view?usp=drive_link', 1),
+  (null, 'https://drive.google.com/file/d/1-hmCJCuCCqhRvjw-sviaheB4Fyf4JKLV/view?usp=drive_link', 1),
+  (null, 'https://drive.google.com/file/d/1XJeMQi0GNeL1Abgb2Vxk-pFiRX7euO3K/view?usp=drive_link', 1),
+  (null, 'https://drive.google.com/file/d/1h7oopFIZEC5WucJv-s8MHl6mf-p2S_zB/view?usp=drive_link', 1),
+  (null, 'https://drive.google.com/file/d/1tHdCLNacPmlCMjqvDipJOR5dZmP6aIvM/view?usp=drive_link', 4),
+  (null, 'https://drive.google.com/file/d/1PYuThtQxMDauIxtRToKDAkLiwFK9k0Uk/view?usp=drive_link', 4),
+  (null, 'https://drive.google.com/file/d/1itRtXpktKyz8OTTr_UeNJsPSeOp9BF9D/view?usp=drive_link', 4),
+  (null, 'https://drive.google.com/file/d/1Xs7Rf_bL9FZ1MYBQyzZ6MSsH5LNQgmXH/view?usp=drive_link', 4);
+
+
+INSERT INTO camp_image (image, image_uri, apartment_apartment_id)
+VALUES
+  (null, 'https://drive.google.com/file/d/1pmarhD_2-oj9nOzjF409JjXW9RppUKL7/view?usp=drive_link', 2),
+  (null, 'https://drive.google.com/file/d/1uAHzrO5-Vk4jQfqLnuZR9kE8gTuFi7mN/view?usp=drive_link', 2),
+  (null, 'https://drive.google.com/file/d/1AXjuSwxMelgHP7HQFhVGpoqIRpf74YvD/view?usp=drive_link', 2),
+  (null, 'https://drive.google.com/file/d/1eTyrODKKeYbqMikmZtERY6HtAbNEPmXb/view?usp=drive_link', 2),
+  (null, 'https://drive.google.com/file/d/16TOHITqB2jkFVAvfEvCnfIZKAnAN9EED/view?usp=drive_link', 4),
+  (null, 'https://drive.google.com/file/d/1-k3mA0I9jm9MMg3SiJATBbia3G1EpFKl/view?usp=drive_link', 4),
+  (null, 'https://drive.google.com/file/d/1A13vw-SByIjldjW19FF8a9IFsxylDEYc/view?usp=drive_link', 4),
+  (null, 'https://drive.google.com/file/d/1DkQ9G30Q-6AMsKqRb5JvM2evm9pNhaNX/view?usp=drive_link', 4);
+
+
+
+
+  -- placeholder image
+
+link: https://drive.google.com/file/d/1QDk0SLOtiv6durBUa485BVg4e0G7I6yu/view?usp=drive_link

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white"
+    android:padding="30dp">
+
+
+    <ImageView
+        android:id="@+id/warning"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/baseline_warning_24"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete My Account"
+        android:textSize="20sp"
+        android:textColor="#0E183C"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deleting your account will remove all your information and log you out of the app. Are you sure you want to do this?"
+        android:padding="10sp"
+        android:textSize="16sp"
+        android:layout_margin="5sp"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F44336"
+            android:text="Delete"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/YesBtn"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:id="@+id/NoBtn"
+            android:backgroundTint="#5A705B"/>
+    </LinearLayout>
+
+</LinearLayout>
+

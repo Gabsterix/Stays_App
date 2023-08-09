@@ -73,6 +73,7 @@
         android:layout_height="wrap_content"
         android:hint="Email address"
         android:textSize="20dp"
+        android:inputType="textEmailAddress"
         android:layout_below="@+id/etSignupLastname"
         android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"/>
@@ -83,6 +84,7 @@
         android:layout_height="wrap_content"
         android:hint="Mobile number"
         android:textSize="20dp"
+        android:inputType="number"
         android:layout_below="@+id/etSignupEmail"
         android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"/>
@@ -103,6 +105,19 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:hint="Re-type Password"
+        android:textSize="20dp"
+        android:inputType="textPassword"
+        android:layout_below="@+id/etSignupPassword"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/etImagePath"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:hint="Image path"
+        android:text="https://drive.google.com/file/d/1KCZyhsxMATy76quSiSvKtLuFwfVWjbkA/view?usp=drive_link"
         android:textSize="20dp"
         android:inputType="textPassword"
         android:layout_below="@+id/etSignupPassword"

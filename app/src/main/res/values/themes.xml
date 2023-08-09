@@ -3,6 +3,7 @@
     <style name="Base.Theme.Stays" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<!--         <item name="colorPrimary">@color/primary_yellow</item> -->
     </style>
 
     <style name="Theme.Stays" parent="Base.Theme.Stays" />

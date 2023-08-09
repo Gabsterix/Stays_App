@@ -1,0 +1,100 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="6dp"
+    layout_margin="8dp"
+    cardCornerRadius="8dp"
+    android:background="#FFFFFF">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="196dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/photo" />
+
+    <TextView
+        android:id="@+id/text_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="16dp"
+        android:text="Address"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/text_address_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_rating"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="225dp"
+        android:layout_marginEnd="15dp"
+        android:text="2nd address line"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_address_line2"
+        android:layout_marginStart="275dp"
+        android:layout_marginTop="210dp"
+        android:text="{star} Rating"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_avail_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_rating"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="260dp"
+        android:text="Avail: date"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/image_star"
+        android:layout_width="21dp"
+        android:layout_height="19dp"
+        android:layout_below="@id/text_avail_date"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@id/text_rating"
+        android:src="@drawable/img_2" />
+
+    <TextView
+        android:id="@+id/text_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_star"
+        android:layout_marginStart="275dp"
+        android:layout_marginTop="275dp"
+        android:text="£price/night"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_price"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="275dp"
+        android:layout_marginBottom="8dp"
+        android:text="34 miles from location"
+        android:textSize="14sp" />
+
+</androidx.cardview.widget.CardView>
