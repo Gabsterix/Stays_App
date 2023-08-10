@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.example.stays.Fragments.AccountSettingsFragment;
 import com.example.stays.Fragments.BookmarkFragment;
 import com.example.stays.Fragments.HomeFragment;
 import com.example.stays.Fragments.NotificationsFragment;
@@ -41,6 +42,8 @@ public class HomeDashboardActivity extends AppCompatActivity {
     BookmarkFragment objBookmarkFragment = new BookmarkFragment();
 
     UserAccountFragment objUserAccountFragment = new UserAccountFragment();
+
+    AccountSettingsFragment accountSettingsFragment = new AccountSettingsFragment();
 
 
     @Override
@@ -110,6 +113,7 @@ public class HomeDashboardActivity extends AppCompatActivity {
                     fragmentTransaction = getSupportFragmentManager().beginTransaction();
 //                    Replace the current fragment with the user account fragment
                     fragmentTransaction.replace(R.id.frameLayoutHome,new UserAccountFragment());
+//                    fragmentTransaction.replace(R.id.frameLayoutHome,new AccountSettingsFragment());
 //                    Commit/Execute the transition
                     fragmentTransaction.commit();
                     return true;

@@ -36,7 +36,8 @@ public class AccountSettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_account_settings, container, false);
+//        View view = inflater.inflate(R.layout.fragment_account_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_user_account, container, false);
 
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String email = sharedPreferences.getString("user_email", "");
@@ -48,16 +49,17 @@ public class AccountSettingsFragment extends Fragment {
             UserModel user = databaseHelper.getUserByEmail(requireContext(), email);
 
             //EditTexts
-            ID = view.findViewById(R.id.ID);
-            Name = view.findViewById(R.id.Name);
-            LastName = view.findViewById(R.id.LastName);
-            Email = view.findViewById(R.id.Email);
-            Phone = view.findViewById(R.id.Phone);
-            Password = view.findViewById(R.id.Password);
+            ID = (TextView) view.findViewById(R.id.ID);
+            Name = (EditText) view.findViewById(R.id.Name);
+            LastName = (EditText) view.findViewById(R.id.LastName);
+            Email = (EditText) view.findViewById(R.id.Email);
+            Phone = (EditText) view.findViewById(R.id.Phone);
+            Password = (EditText) view.findViewById(R.id.Password);
 
             // Display user data in EditText fields
             if (user != null) {
-                ID.setText(String.valueOf(user.getUser_id()));
+//                ID.setText(String.valueOf(user.getUser_id()));
+                ID.setText(user.getUser_id().toString());
                 Name.setText(user.getFirstname());
                 LastName.setText(user.getLastname());
                 Email.setText(user.getEmail());
