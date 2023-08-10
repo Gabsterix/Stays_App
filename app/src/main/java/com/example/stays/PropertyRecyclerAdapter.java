@@ -10,9 +10,7 @@
 //import androidx.annotation.NonNull;
 //import androidx.recyclerview.widget.RecyclerView;
 //
-//import com.bumptech.glide.Glide;
-//import com.example.stays.Fragments.HomeMasterFragment;
-//import com.example.stays.Models.Property;
+//import com.example.stays.Models.PropertyDataModel;
 //import com.squareup.picasso.Picasso;
 //
 //import java.util.ArrayList;
@@ -22,7 +20,7 @@
 //
 //    private Context context;
 //
-//    private List<Property> propertyList;
+//    private List<PropertyDataModel> propertyList;
 //
 //    private ArrayList prop_id, property_code, country, location, property_name, building_no,
 //            address, postcode, rental_type, child_friendly, disability_friendly,
@@ -109,17 +107,14 @@
 //        holder.price.setText(String.valueOf(rate_per_night.get(position)));
 ////        holder.imagePath.setText(String.valueOf(image_uri.get(position)));
 ////        holder.imagePath.setText(String.valueOf(image_uri.get(position)));
-////        String imagePath = String.valueOf(image_uri.get(position));
-//        Glide.with(context)
-//                .load(String.valueOf(image_uri.get(position)))
-//                .placeholder(R.drawable.beach_1)
-//                .into(holder.imageView);
+//        String imagePath = String.valueOf(image_uri.get(position));
+////        Glide.with(context).load(new File(URI.getPath())).into(imageView);
 ////        Picasso.get()
 ////                .load(String.valueOf(holder.imagePath))
 ////                .into(holder.imageView);
 ////        Picasso.get().load(String.valueOf(holder.imagePath)).into(holder.imageView);
 //
-////        Picasso.get().load(imagePath).into(holder.imageView);
+//        Picasso.get().load(imagePath).into(holder.imageView);
 //
 //    }
 //
@@ -133,17 +128,19 @@
 //        TextView building_No, address, ratings, mileage, price, imagePath;
 //
 //        ImageView imageView;
+//
+////        String imagePath;
 //        public ViewHolder(@NonNull View itemView) {
 //            super(itemView);
 //
-//            address = (TextView) itemView.findViewById(R.id.tvAddressLine);
+//            address = itemView.findViewById(R.id.tvAddressLine);
 ////            building_No = itemView.findViewById(R.id.tvAddressLine);
 ////            address = itemView.findViewById(R.id.tvAddressLine2);
-//            ratings = (TextView) itemView.findViewById(R.id.tvRating);
-//            mileage = (TextView) itemView.findViewById(R.id.tvMileage);
-//            price = (TextView) itemView.findViewById(R.id.tvPrice);
+//            ratings = itemView.findViewById(R.id.tvRating);
+//            mileage = itemView.findViewById(R.id.tvMileage);
+//            price = itemView.findViewById(R.id.tvPrice);
 ////            imagePath = itemView.findViewById(R.id.tvImagePath);
-//            imageView = (ImageView) itemView.findViewById(R.id.propertyImage);
+//            imageView = itemView.findViewById(R.id.propertyImage);
 ////            image_uri = itemView.findViewById(R.id.tvImagePath);
 //
 //        }

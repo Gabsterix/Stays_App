@@ -5,10 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.example.stays.Models.PropertyModel;
+import com.example.stays.Models.PropertyDataModel;
 import com.example.stays.Models.UserModel;
 
 import java.util.ArrayList;
@@ -96,9 +97,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         selectPropertyDataViewBasedOnHotel(sqLiteDatabase);
 
 
-
-
-
 //        Create Booking table
 //        createBookingTable(sqLiteDatabase);
 
@@ -130,7 +128,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         DatabaseHelper.COLUMN_3 = "email";
         DatabaseHelper.COLUMN_4 = "mobile";
         DatabaseHelper.COLUMN_5 = "password";
-        DatabaseHelper.COLUMN_6 = "image_uri";
+//        DatabaseHelper.COLUMN_6 = "image_uri";
 //      Create an object of the Content values class and instantiate it
         ContentValues contentValues = new ContentValues();
 //        Place the values into the container
@@ -140,7 +138,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(DatabaseHelper.COLUMN_3, userModel.getEmail());
         contentValues.put(DatabaseHelper.COLUMN_4, userModel.getMobile());
         contentValues.put(DatabaseHelper.COLUMN_5, userModel.getPassword());
-        contentValues.put(DatabaseHelper.COLUMN_6, userModel.getImagePath());
+//        contentValues.put(DatabaseHelper.COLUMN_6, userModel.getImagePath());
 //        Executes the query and stores the result
         long result = db.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
         return result != -1;
@@ -187,7 +185,7 @@ public boolean validateUser(UserModel userModel) {
 
 
 //      Update method for user details
-    public boolean updateUserDetails(Integer user_id, String firstname, String lastname, String mobile, String email, String password, String avatar_uri){
+    public boolean updateUserDetails(Integer id, String firstname, String lastname, String mobile, String email, String password){
 
 
 //        Create the sqlite connection object
@@ -203,20 +201,22 @@ public boolean validateUser(UserModel userModel) {
         DatabaseHelper.COLUMN_3 = "email";
         DatabaseHelper.COLUMN_4 = "mobile";
         DatabaseHelper.COLUMN_5 = "password";
-        DatabaseHelper.COLUMN_6 = "avatar_uri";
 
 //        Create the content values object
         ContentValues contentValues = new ContentValues();
 
+//        Take the user_id from the shared preferences class
+//        user_id = SharedPreferences.getString("user_id");
+
 //        Pass the data to the content values object
+//        contentValues.put(COLUMN_ID, user_id);
         contentValues.put(COLUMN_1, firstname);
         contentValues.put(COLUMN_2, lastname);
         contentValues.put(COLUMN_3, email);
         contentValues.put(COLUMN_4, mobile);
         contentValues.put(COLUMN_5, password);
-        contentValues.put(COLUMN_6, avatar_uri);
 //        Execute the update statement
-        int rowsAffected = db.update(TABLE_NAME, contentValues, COLUMN_ID + " = ?", new String[]{String.valueOf(user_id)});
+        int rowsAffected = db.update(TABLE_NAME, contentValues, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
 
 //        Return
         return rowsAffected > 0;
@@ -240,6 +240,108 @@ public boolean validateUser(UserModel userModel) {
         return rowsAffected > 0;
     }
 
+//    Code from Alva=====
+
+    public UserModel getUserByEmail(Context context, String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] projection = {
+                "user_id",
+                "firstname",
+                "lastname",
+                "email",
+                "mobile",
+                "password",
+        };
+        String selection = "email" + " = ?";
+        String[] selectionArgs = {email};
+
+        Cursor cursor = db.query(
+                "user",
+                projection,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                null
+        );
+
+        UserModel user = new UserModel("", "", " ", " ", " ");
+
+        //UserModel user = null; // Initialize with default values
+
+        if (cursor != null && cursor.moveToFirst()) {
+            int idColumnIndex = cursor.getColumnIndex("user_id");
+            int firstNameColumnIndex = cursor.getColumnIndex("firstname");
+            int lastNameColumnIndex = cursor.getColumnIndex("lastname");
+            int userEmailColumnIndex = cursor.getColumnIndex("email");
+            int mobileNumberColumnIndex = cursor.getColumnIndex("mobile");
+            int passwordColumnIndex = cursor.getColumnIndex("password");
+
+
+            // Check if the columns exist in the cursor before retrieving the values.
+            if (idColumnIndex != -1 && firstNameColumnIndex != -1 && lastNameColumnIndex != -1
+                    && userEmailColumnIndex != -1 && mobileNumberColumnIndex != -1 && passwordColumnIndex != -1) {
+
+                String id = cursor.getString(idColumnIndex);
+                String firstName = cursor.getString(firstNameColumnIndex);
+                String lastName = cursor.getString(lastNameColumnIndex);
+                String userEmail = cursor.getString(userEmailColumnIndex);
+                String mobileNumber = cursor.getString(mobileNumberColumnIndex);
+                String password = cursor.getString(passwordColumnIndex);
+
+                // CHECK FOR NULL VALUES AND PROVIDE DEFAULT VALUES IF NEEDED
+                if (id == null) {
+                    id="default_id";
+                }
+                if(firstName == null) {
+                    firstName = "default_firstname";
+                }
+                if(lastName == null) {
+                    lastName = "default_lastname";
+                }
+                if(userEmail == null) {
+                    userEmail = "default_email";
+                }
+                if(mobileNumber == null) {
+                    mobileNumber = "default_mobileNumber";
+                }
+                if (password == null ){
+                    password = "default_password";
+                }
+
+                // Create the UserModel instance using the retrieved values.
+                user = new UserModel( id, firstName, lastName, userEmail, mobileNumber, password);
+            } else {
+                Toast.makeText(context, "Some columns were not found in cursor", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+        cursor.close();
+        db.close();
+
+        return user;
+    }
+
+    public boolean deleteUserByEmail(String userEmail) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String tableName = "user";
+        String whereClause = "email = ?";
+        String[] whereArgs = {userEmail};
+
+        int rowsDeleted = db.delete(tableName, whereClause, whereArgs);
+
+        db.close();
+
+        // Return true if at least one row is deleted, otherwise return false
+        return rowsDeleted > 0;
+    }
+
+
+
+
+
+//    End of code from Alva
+
 
     private void createUserTable(SQLiteDatabase sqLiteDatabase){
 
@@ -251,7 +353,7 @@ public boolean validateUser(UserModel userModel) {
         COLUMN_3 = "email";
         COLUMN_4 = "mobile";
         COLUMN_5 = "password";
-        COLUMN_6 = "image_uri";
+//        COLUMN_6 = "image_uri";
 
 //        PART 2: Create user table structure
         String createUserTableQuery = "CREATE TABLE " + TABLE_NAME + " ("
@@ -260,8 +362,8 @@ public boolean validateUser(UserModel userModel) {
                 + COLUMN_2 + " TEXT, "
                 + COLUMN_3 + " TEXT, "
                 + COLUMN_4 + " TEXT, "
-                + COLUMN_5 + " TEXT, "
-                + COLUMN_6 + " TEXT)";
+                + COLUMN_5 + " TEXT)";
+//                + COLUMN_6 + " TEXT)";
 
 //        PART 3: Execute the query
         sqLiteDatabase.execSQL(createUserTableQuery);
@@ -469,7 +571,7 @@ public boolean validateUser(UserModel userModel) {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT building_no, address, star_rating, rate_per_night, mileage, image_uri FROM " + TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("SELECT building_no, address, star_rating, rate_per_night, mileage FROM " + TABLE_NAME, null);
 
         return cursor;
     }

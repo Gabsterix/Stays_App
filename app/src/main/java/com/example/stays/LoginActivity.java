@@ -2,7 +2,9 @@ package com.example.stays;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -107,6 +109,10 @@ public class LoginActivity extends AppCompatActivity {
                     if(success==true){
 //                        Show a message saying login was successful
                         Toast.makeText(LoginActivity.this, success + ": Login  was successful.", Toast.LENGTH_SHORT).show();
+                        String email = usernameEditText.getText().toString().trim();
+                        String user_id = String.valueOf(userModel.getUser_id());
+//                        Integer user_id = userModel.getUser_id();
+                        saveUserEmailToSharedPreferences(email, user_id);
 
                         // Start the Signup activity
                         Intent intent = new Intent(LoginActivity.this, HomeDashboardActivity.class);
@@ -123,8 +129,25 @@ public class LoginActivity extends AppCompatActivity {
 
                 } catch (Exception e){
 //                    False part: Show incorrect message
-                    Toast.makeText(LoginActivity.this, (CharSequence) e, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(LoginActivity.this, (CharSequence) e, Toast.LENGTH_SHORT).show();
+//                    String errorMessage = e.getMessage();
+//                    if (errorMessage == null) {
+//                        errorMessage = "An error occurred";
+//                    }
+//                    Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+
+                    Toast.makeText(LoginActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+
                 }
+
+            }
+
+            private void saveUserEmailToSharedPreferences(String email, String user_id) {
+                SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("user_id", user_id);
+                editor.putString("user_email", email);
+                editor.apply();
             }
         });
     }
@@ -132,7 +155,7 @@ public class LoginActivity extends AppCompatActivity {
     //        Utility Methods
 
     public void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 
 //    public void loginUser() {

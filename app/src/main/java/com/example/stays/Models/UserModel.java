@@ -1,5 +1,7 @@
 package com.example.stays.Models;
 
+import android.content.Context;
+
 public class UserModel {
 
 //    Declare variables to hold the data
@@ -9,7 +11,7 @@ public class UserModel {
     private String email;
     private String mobile;
     private String password;
-    private String imagePath="https://drive.google.com/file/d/1KCZyhsxMATy76quSiSvKtLuFwfVWjbkA/view?usp=drive_link";
+
 
 //    Non parameterised constructor
 
@@ -17,31 +19,37 @@ public class UserModel {
     }
 
 //    Constructor to be used for retrieving login details
+
+
+    public UserModel(String email) {
+        this.email = email;
+    }
+
     public UserModel(String email, String password) {
         this.email = email;
         this.password = password;
     }
 
+
+
     //    Create the class constructor (to be used for inserting new records)
-    public UserModel(String firstname, String lastname, String email, String mobile, String password, String imagePath) {
+    public UserModel(String firstname, String lastname, String email, String mobile, String password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.mobile = mobile;
         this.password = password;
-        this.imagePath = imagePath;
     }
 
 //    This constructor would be used for updates only
 
-    public UserModel(Integer user_id, String firstname, String lastname, String email, String mobile, String password, String imagePath) {
-        this.user_id = user_id;
+    public UserModel(String id, String firstname, String lastname, String email, String mobile, String password) {
+        this.user_id = Integer.parseInt(id);
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.mobile = mobile;
         this.password = password;
-        this.imagePath = imagePath;
     }
 
 
@@ -95,13 +103,6 @@ public class UserModel {
         this.password = password;
     }
 
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
 
 
 //    Create the toString method to get all the data from the database
@@ -115,7 +116,6 @@ public class UserModel {
                 ", email='" + email + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", password='" + password + '\'' +
-                ", imagePath='" + imagePath + '\'' +
                 '}';
     }
 }

@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.stays.Models.Property;
 import com.example.stays.Models.PropertyData;
 import com.example.stays.Models.PropertyDataModel;
 import com.example.stays.PropertyDataAdapter;
@@ -21,10 +20,6 @@ import java.util.ArrayList;
 
 public class HomeMasterFragment extends Fragment {
     RecyclerView recyclerView;
-//    PropertyRecyclerAdapter adapter;
-//    DatabaseHelper databaseHelper;
-//    List<Property> propertyList = new ArrayList<>();
-
     LinearLayoutManager layoutManager;
     ArrayList<PropertyDataModel> propertyArrayList;
     PropertyDataAdapter propertyAdapter;
@@ -47,34 +42,7 @@ public class HomeMasterFragment extends Fragment {
 
         recyclerView.setAdapter(propertyAdapter);
 
-//        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-//        adapter = new PropertyRecyclerAdapter(propertyList);
-//        recyclerView.setAdapter(adapter);
-//
-//        databaseHelper = new DatabaseHelper(requireContext());
-//        fetchProperties();
-
         return view;
     }
 
-//    private void fetchProperties() {
-//        Cursor cursor = databaseHelper.getData();
-//        if (cursor.getCount() == 0) {
-//            Toast.makeText(requireContext(), "No Data Exists", Toast.LENGTH_SHORT).show();
-//            return;
-//        } else {
-//            while (cursor.moveToNext()) {
-//                Property property = new Property();
-////                property.setBuilding_no(cursor.getString(0));
-//                property.setAddress(cursor.getString(1));
-//                property.setStar_rating(cursor.getString(2));
-//                property.setMileage(cursor.getString(3));
-//                property.setRate_per_night(cursor.getString(4));
-//                property.setImage_uri(cursor.getString(5));
-//                propertyList.add(property);
-//            }
-//            cursor.close();
-//            adapter.notifyDataSetChanged(); // Notify the adapter about the changes in data
-//        }
-//    }
 }

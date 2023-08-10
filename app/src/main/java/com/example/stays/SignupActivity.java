@@ -21,7 +21,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText mobileNumberEditText;
     private EditText passwordEditText;
 
-    private EditText imagePathEditText;
+//    private EditText imagePathEditText;
 
     private DatabaseHelper databaseHelper;
 
@@ -48,7 +48,7 @@ public class SignupActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.etSignupEmail);
         mobileNumberEditText = findViewById(R.id.etSignupMobile);
         passwordEditText = findViewById(R.id.etSignupPassword);
-        imagePathEditText = findViewById(R.id.etImagePath);
+//        imagePathEditText = findViewById(R.id.etImagePath);
         txtLogin = (TextView) findViewById(R.id.tvLoginLink);
         btnSignup = (Button)findViewById(R.id.btnSignupBTN);
 
@@ -76,7 +76,7 @@ public class SignupActivity extends AppCompatActivity {
                 String email = emailEditText.getText().toString().trim();
                 String mobileNumber = mobileNumberEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
-                String imagepath = imagePathEditText.getText().toString();
+//                String imagepath = imagePathEditText.getText().toString();
 
 
                 // Validate input fields
@@ -121,7 +121,7 @@ public class SignupActivity extends AppCompatActivity {
 
                 try {
 //                    Try to save the data into the sqlite database
-                    UserModel userModel =new UserModel(firstName, lastName, email, mobileNumber, password, imagepath);
+                    UserModel userModel =new UserModel(firstName, lastName, email, mobileNumber, password);
 //                    Instantiate the database helper class
                     databaseHelper = new DatabaseHelper(SignupActivity.this);
 
