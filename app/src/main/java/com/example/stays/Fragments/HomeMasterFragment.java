@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.stays.Models.PropertyData;
 import com.example.stays.Models.PropertyDataModel;
-import com.example.stays.PropertyDataAdapter;
+import com.example.stays.Adaptors.PropertyDataAdapter;
 import com.example.stays.R;
 
 import java.util.ArrayList;
@@ -46,3 +46,5 @@ public class HomeMasterFragment extends Fragment {
     }
 
 }
+
+

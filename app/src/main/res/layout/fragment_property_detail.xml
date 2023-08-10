@@ -3,7 +3,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.Property_DetailFragment">
+    tools:context=".Fragments.Property_DetailFragment"
+    android:padding="10dp">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/image_property"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder"/>
+
+        <TextView
+            android:id="@+id/text_property_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Property Name"
+            android:textSize="18sp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_mileage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mileage"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Country"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_toilet_facility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toilet Facility"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_bath_facility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bath Facility"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_checkin_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Check-in Date"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/text_checkout_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Checkout Date"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/button_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Now"
+            android:padding="16dp"/>
+    </LinearLayout>
 
 
 

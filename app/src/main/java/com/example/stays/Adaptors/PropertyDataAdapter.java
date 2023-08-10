@@ -1,9 +1,10 @@
-package com.example.stays;
+package com.example.stays.Adaptors;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,13 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.stays.Models.PropertyDataModel;
+import com.example.stays.R;
 
 import java.util.ArrayList;
 
-public class PropertyDataAdapter extends RecyclerView.Adapter<PropertyDataAdapter.ViewHolder> {
+public class PropertyDataAdapter extends RecyclerView.Adapter<PropertyDataAdapter.ViewHolder> implements View.OnClickListener{
 
     private Context context;
     private ArrayList<PropertyDataModel> propertyDataModels;
+
+    private AdapterView.OnItemClickListener itemClickListener;
 
     public PropertyDataAdapter(Context context, ArrayList<PropertyDataModel> propertyDataModels) {
         this.context = context;
@@ -64,6 +68,11 @@ public class PropertyDataAdapter extends RecyclerView.Adapter<PropertyDataAdapte
         }
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView addressText, ratingText, mileageText, priceText;
@@ -78,3 +87,4 @@ public class PropertyDataAdapter extends RecyclerView.Adapter<PropertyDataAdapte
         }
     }
 }
+
