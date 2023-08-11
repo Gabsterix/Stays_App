@@ -14,82 +14,209 @@
         android:layout_gravity="center">
 
         <ImageView
-            android:id="@+id/image_property"
+            android:id="@+id/propertyImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
             android:src="@drawable/placeholder"/>
 
-        <TextView
-            android:id="@+id/text_property_name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Property Name"
-            android:textSize="18sp"
-            android:padding="8dp"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 
-        <TextView
-            android:id="@+id/text_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:padding="8dp"/>
+            <TextView
+                android:id="@+id/tvPropertyName"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content"
+                android:text="Property Name"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:layout_weight="2"/>
 
-        <TextView
-            android:id="@+id/text_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Price"
-            android:padding="8dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/text_mileage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mileage"
-            android:padding="8dp"/>
+                <ImageView
+                    android:id="@+id/ivStar_Ratings"
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/baseline_star"/>
 
-        <TextView
-            android:id="@+id/text_country"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Country"
-            android:padding="8dp"/>
+                <TextView
+                    android:id="@+id/tvRating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:textSize="18sp"
+                    android:padding="8dp"/>
 
-        <TextView
-            android:id="@+id/text_location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:padding="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_toilet_facility"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Toilet Facility"
-            android:padding="8dp"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/text_bath_facility"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Bath Facility"
-            android:padding="8dp"/>
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:padding="8dp"/>
 
-        <TextView
-            android:id="@+id/text_checkin_date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Check-in Date"
-            android:padding="8dp"/>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_checkout_date"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Checkout Date"
-            android:padding="8dp"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/tvMileage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mileage"
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:padding="8dp"
+                android:layout_weight="2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/tvCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Country"
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:padding="8dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivWashroom"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/baseline_shower"/>
+
+                <TextView
+                    android:id="@+id/tvBathFacility"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Shower/Toilet Facility"
+                    android:padding="8dp"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvToilet_facility"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Toilet Facility"-->
+<!--            android:padding="8dp"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_marginRight="20dp">
+                <TextView
+                    android:id="@+id/tvCheck_in_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Check-in Date"
+                    android:padding="8dp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btnCheck_in"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:text="JAN 01 2023"
+                    android:textSize="25sp"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvCheckout_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Checkout Date"
+                    android:padding="8dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btnCheck_out"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="AUG 11 2023"
+                    android:textSize="25sp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
 
         <Button
             android:id="@+id/button_book"

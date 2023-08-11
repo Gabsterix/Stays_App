@@ -7,43 +7,24 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.stays.Models.PropertyDataModel;
 import com.example.stays.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Property_DetailFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Property_DetailFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private PropertyDataModel selectedProperty;
 
     public Property_DetailFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Property_DetailFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Property_DetailFragment newInstance(String param1, String param2) {
+    public static Property_DetailFragment newInstance(PropertyDataModel property) {
         Property_DetailFragment fragment = new Property_DetailFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+//        args.putParcelable("property", property);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,15 +33,33 @@ public class Property_DetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            selectedProperty = getArguments().getParcelable("property");
         }
     }
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_property_detail, container, false);
+//        return inflater.inflate(R.layout.fragment_property_detail, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_property_detail, container, false);
+
+        ImageView imageView = view.findViewById(R.id.propertyImage);
+        TextView addressText = view.findViewById(R.id.tvAddress);
+        TextView ratingText = view.findViewById(R.id.tvRating);
+        TextView mileageText = view.findViewById(R.id.tvMileage);
+        TextView priceText = view.findViewById(R.id.tvPrice);
+
+//        imageView.setImageResource(String.valueOf(selectedProperty.getImage_uri()));
+        addressText.setText(selectedProperty.getAddress());
+        ratingText.setText(String.valueOf(selectedProperty.getRating()));
+        mileageText.setText(selectedProperty.getMileage() + " miles from city");
+        priceText.setText(selectedProperty.getPrice());
+
+        return view;
     }
 }

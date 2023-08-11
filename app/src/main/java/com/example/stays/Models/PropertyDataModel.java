@@ -1,6 +1,8 @@
 package com.example.stays.Models;
 
-public class PropertyDataModel {
+import java.util.ArrayList;
+
+public class PropertyDataModel extends ArrayList<PropertyDataModel> {
 
     private String address;
     private String rating;
