@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -84,6 +85,16 @@ public class PropertyDataAdapter extends RecyclerView.Adapter<PropertyDataAdapte
             ratingText = itemView.findViewById(R.id.tvRating);
             mileageText = itemView.findViewById(R.id.tvMileage);
             priceText = itemView.findViewById(R.id.tvPrice);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    Toast.makeText(v.getContext(), "Item Number: " + (position + 1), Toast.LENGTH_SHORT).show();
+//                    Need to handle showing the right card details in a new fragment
+
+                }
+            });
         }
     }
 }
